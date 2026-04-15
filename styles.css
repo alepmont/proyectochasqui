@@ -69,6 +69,42 @@ img {
     gap: 12px;
 }
 
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(45, 70, 54, 0.22);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--charcoal);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.topbar.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.topbar.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.topbar.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 .brand-mark {
     width: 42px;
     height: 42px;
@@ -1140,13 +1176,53 @@ img {
         top: auto;
         margin-top: 12px;
         border-radius: 28px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        justify-items: start;
+        gap: 12px;
+        padding: 12px 14px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .brand {
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .topnav {
+        display: none;
+        grid-column: 1 / -1;
+        grid-row: 2;
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 10px;
+        border-radius: 18px;
+        background: rgba(244, 247, 246, 0.95);
+        border: 1px solid rgba(45, 70, 54, 0.12);
+    }
+
+    .topbar.menu-open .topnav {
+        display: flex;
+    }
+
+    .topnav a {
+        width: 100%;
+        padding: 10px 8px;
+        border-radius: 10px;
+    }
+
+    .topnav a:hover,
+    .topnav a:focus-visible {
+        background: rgba(181, 139, 76, 0.12);
     }
 
     .hero {

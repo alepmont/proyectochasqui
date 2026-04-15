@@ -1,6 +1,43 @@
 const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
 const revealElements = Array.from(document.querySelectorAll('.reveal'));
 const contactForm = document.querySelector('.contact-form');
+const topbar = document.querySelector('.topbar');
+const menuToggle = document.querySelector('.menu-toggle');
+const topnav = document.querySelector('.topnav');
+
+if (topbar && menuToggle && topnav) {
+    const closeMenu = () => {
+        topbar.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+    };
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = topbar.classList.toggle('menu-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menu' : 'Abrir menu');
+    });
+
+    topnav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 720) {
+                closeMenu();
+            }
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 720) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+}
 
 if (heroSlides.length > 1) {
     let activeSlide = 0;
