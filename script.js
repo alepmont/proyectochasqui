@@ -4,6 +4,98 @@ const contactForm = document.querySelector('.contact-form');
 const topbar = document.querySelector('.topbar');
 const menuToggle = document.querySelector('.menu-toggle');
 const topnav = document.querySelector('.topnav');
+const experienceGrid = document.querySelector('.experience-grid');
+const experiencePrev = document.querySelector('.carousel-arrow-prev');
+const experienceNext = document.querySelector('.carousel-arrow-next');
+const langButtons = Array.from(document.querySelectorAll('.lang-button'));
+
+const setLangButtonState = (lang) => {
+    langButtons.forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.lang === lang);
+    });
+};
+
+const setGoogleLangCookie = (lang) => {
+    const cookieValue = `/es/${lang}`;
+    document.cookie = `googtrans=${cookieValue};path=/`;
+    document.cookie = `googtrans=${cookieValue};path=/;domain=${window.location.hostname}`;
+};
+
+const applyGoogleTranslate = (lang) => {
+    const combo = document.querySelector('.goog-te-combo');
+
+    if (!(combo instanceof HTMLSelectElement)) {
+        return false;
+    }
+
+    if (combo.value !== lang) {
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+    }
+
+    return true;
+};
+
+window.googleTranslateElementInit = () => {
+    if (!(window.google && window.google.translate && window.google.translate.TranslateElement)) {
+        return;
+    }
+
+    new window.google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en',
+        autoDisplay: false
+    }, 'google_translate_element');
+};
+
+const loadGoogleTranslate = () => {
+    if (document.querySelector('script[data-google-translate="true"]')) {
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.dataset.googleTranslate = 'true';
+    document.head.appendChild(script);
+};
+
+if (langButtons.length) {
+    const browserLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'es';
+    const initialLang = localStorage.getItem('site-lang') || browserLang;
+
+    setLangButtonState(initialLang);
+    setGoogleLangCookie(initialLang);
+    loadGoogleTranslate();
+
+    const syncInitialLanguage = () => {
+        if (!applyGoogleTranslate(initialLang)) {
+            window.setTimeout(syncInitialLanguage, 350);
+        }
+    };
+
+    window.setTimeout(syncInitialLanguage, 450);
+
+    langButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const targetLang = button.dataset.lang === 'en' ? 'en' : 'es';
+
+            localStorage.setItem('site-lang', targetLang);
+            setLangButtonState(targetLang);
+            setGoogleLangCookie(targetLang);
+
+            if (!applyGoogleTranslate(targetLang)) {
+                const retry = () => {
+                    if (!applyGoogleTranslate(targetLang)) {
+                        window.setTimeout(retry, 250);
+                    }
+                };
+
+                retry();
+            }
+        });
+    });
+}
 
 if (topbar && menuToggle && topnav) {
     const closeMenu = () => {
@@ -47,6 +139,59 @@ if (heroSlides.length > 1) {
         activeSlide = (activeSlide + 1) % heroSlides.length;
         heroSlides[activeSlide].classList.add('is-active');
     }, 4200);
+}
+
+if (experienceGrid && experiencePrev && experienceNext) {
+    let autoScrollId;
+
+    const getScrollStep = () => {
+        const firstCard = experienceGrid.querySelector('.experience-card');
+        if (!(firstCard instanceof HTMLElement)) {
+            return 320;
+        }
+
+        const styles = window.getComputedStyle(experienceGrid);
+        const gap = Number.parseFloat(styles.columnGap || styles.gap || '0');
+        return firstCard.offsetWidth + gap;
+    };
+
+    const scrollNext = () => {
+        const step = getScrollStep();
+        const remaining = experienceGrid.scrollWidth - experienceGrid.clientWidth - experienceGrid.scrollLeft;
+
+        if (remaining <= step * 0.6) {
+            experienceGrid.scrollTo({ left: 0, behavior: 'smooth' });
+            return;
+        }
+
+        experienceGrid.scrollBy({ left: step, behavior: 'smooth' });
+    };
+
+    const startAutoScroll = () => {
+        window.clearInterval(autoScrollId);
+        autoScrollId = window.setInterval(scrollNext, 4200);
+    };
+
+    const stopAutoScroll = () => {
+        window.clearInterval(autoScrollId);
+    };
+
+    experiencePrev.addEventListener('click', () => {
+        experienceGrid.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        startAutoScroll();
+    });
+
+    experienceNext.addEventListener('click', () => {
+        experienceGrid.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        startAutoScroll();
+    });
+
+    experienceGrid.addEventListener('mouseenter', stopAutoScroll);
+    experienceGrid.addEventListener('mouseleave', startAutoScroll);
+    experienceGrid.addEventListener('focusin', stopAutoScroll);
+    experienceGrid.addEventListener('focusout', startAutoScroll);
+
+    startAutoScroll();
 }
 
 const revealObserver = new IntersectionObserver((entries) => {
