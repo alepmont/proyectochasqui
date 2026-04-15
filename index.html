@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chasqui ofrece trekking y expediciones personalizadas en Mendoza con guias profesionales, rutas para todos los niveles y experiencias reales en los Andes.">
+    <meta name="description" content="Chasqui ofrece trekking y expediciones personalizadas en Mendoza con guías profesionales. Grupos reducidos, logística completa y experiencias reales en los Andes.">
     <title>Chasqui | Trekking y Expediciones en Mendoza</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,22 +14,26 @@
     <div class="site-shell">
         <header class="topbar">
             <a class="brand" href="#inicio" aria-label="Chasqui inicio">
-                <span class="brand-mark">C</span>
+                <span class="brand-mark" aria-hidden="true">
+                    <img src="imagen/logo.avif" alt="">
+                </span>
                 <span class="brand-copy">
                     <strong>Chasqui</strong>
                     <small>Trekking y expediciones</small>
                 </span>
             </a>
-            <nav class="topnav" aria-label="Navegacion principal">
-                <a href="#experiencias">Experiencias</a>
-                <a href="#diferencial">Diferencial</a>
-                <a href="#historias">Historias</a>
+            <nav class="topnav" aria-label="Navegación principal">
+                <a href="#experiencias">Expediciones</a>
+                <a href="#paquetes">Paquetes</a>
+                <a href="#diferencial">Nosotros</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-            <a class="button button-primary button-compact" href="#contacto">Quiero mi aventura</a>
+            <a class="button button-primary button-compact" href="#contacto">Reservar salida</a>
         </header>
 
         <main>
+
+            <!-- HERO -->
             <section class="hero" id="inicio">
                 <div class="hero-media" aria-hidden="true">
                     <div class="hero-slide hero-slide-1 is-active"></div>
@@ -40,232 +44,380 @@
                 </div>
 
                 <div class="hero-content">
-                    <p class="eyebrow">Mendoza, altura, experiencia real</p>
-                    <h1>Tu proxima aventura en los Andes empieza aqui.</h1>
-                    <p class="hero-copy">Guias profesionales para trekking y expediciones personalizadas en Mendoza. De principiantes a expertos, con la lectura precisa del terreno, el clima y tu nivel.</p>
+                    <p class="eyebrow">Mendoza · Alta montaña · Guías certificados</p>
+                    <h1>La montaña mendocina como nunca la viviste.</h1>
+                    <p class="hero-copy">Trekking y expediciones personalizadas en los Andes. Desde el Cordón del Plata hasta el Aconcagua, con guías con años de experiencia en terreno real.</p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#contacto">Quiero mi aventura</a>
-                        <a class="button button-secondary" href="#experiencias">Explorar expediciones</a>
+                        <a class="button button-primary" href="#contacto">Reservar mi salida</a>
+                        <a class="button button-secondary" href="#experiencias">Ver expediciones</a>
                     </div>
                     <ul class="hero-highlights" aria-label="Puntos clave de Chasqui">
-                        <li>Salidas guiadas en Aconcagua, Cordon del Plata y alta montana.</li>
-                        <li>Grupos reducidos, seguridad real y logistica clara.</li>
-                        <li>Experiencias a medida para empresas, viajeros y equipos.</li>
+                        <li>Grupos reducidos con guías profesionales certificados.</li>
+                        <li>Logística completa: equipamiento, traslados y campamentos.</li>
+                        <li>Rutas para todos los niveles en Mendoza y alta montaña.</li>
                     </ul>
                 </div>
 
                 <aside class="hero-panel">
                     <div class="panel-card panel-card-live">
-                        <span class="panel-kicker">Inspiracion visual</span>
-                        <h2>Hero listo para video o secuencia de fotos</h2>
-                        <p>La composicion ya esta preparada para reemplazar el fondo por clips de amanecer, drone o imagenes reales de Instagram sin tocar la estructura.</p>
+                        <span class="panel-kicker">Próximas salidas</span>
+                        <ul class="upcoming-list">
+                            <li>
+                                <span class="upcoming-date">Mayo 10</span>
+                                <span class="upcoming-name">Trekking Cordón del Plata</span>
+                            </li>
+                            <li>
+                                <span class="upcoming-date">Mayo 24</span>
+                                <span class="upcoming-name">Trek Plaza Francia</span>
+                            </li>
+                            <li>
+                                <span class="upcoming-date">Junio 7</span>
+                                <span class="upcoming-name">Expedición Alta Montaña</span>
+                            </li>
+                        </ul>
+                        <a class="button button-primary panel-cta" href="#contacto">Consultar disponibilidad</a>
                     </div>
                     <div class="panel-card panel-card-proof">
-                        <span class="proof-tag">Identidad</span>
-                        <p>Chasqui combina profesionalismo, calidez humana y conocimiento del terreno. La estetica cruza tonos de piedra, nieve y aventura para reflejar Mendoza.</p>
+                        <span class="proof-tag">Certificación</span>
+                        <p>Guías habilitados por la Asociación Argentina de Guías de Montaña (AAGM) con seguro incluido en cada salida.</p>
                     </div>
                 </aside>
             </section>
 
-            <section class="trust-strip">
-                <div>
-                    <strong>Rutas con criterio</strong>
-                    <span>Planificacion segun clima, altitud y ritmo del grupo.</span>
+            <!-- STATS -->
+            <section class="stats-strip">
+                <div class="stat-item">
+                    <strong>10+</strong>
+                    <span>Años de experiencia</span>
                 </div>
-                <div>
-                    <strong>Guias profesionales</strong>
-                    <span>Experiencia local y acompanamiento cercano en cada tramo.</span>
+                <div class="stat-item">
+                    <strong>200+</strong>
+                    <span>Expediciones realizadas</span>
                 </div>
-                <div>
-                    <strong>Expediciones reales</strong>
-                    <span>Preparadas para principiantes, montanistas y equipos privados.</span>
+                <div class="stat-item">
+                    <strong>6.962<small>msnm</small></strong>
+                    <span>Cima máxima alcanzada</span>
+                </div>
+                <div class="stat-item">
+                    <strong>Máx. 8</strong>
+                    <span>Personas por salida</span>
                 </div>
             </section>
 
+            <!-- EXPEDICIONES -->
             <section class="section section-experiences" id="experiencias">
                 <div class="section-heading reveal">
-                    <p class="eyebrow">Experiencias</p>
-                    <h2>Elegi la intensidad. Nosotros resolvemos la montana.</h2>
-                    <p>Una landing efectiva no vende solo destinos: vende confianza. Estas propuestas estan pensadas para mostrar variedad, orden y una progresion clara hacia la reserva.</p>
+                    <p class="eyebrow">Expediciones</p>
+                    <h2>Elegí el desafío. Nosotros resolvemos la montaña.</h2>
+                    <p>Cada salida tiene su propia identidad: ritmo, altitud y paisaje. Armamos el programa según tu nivel y tus fechas.</p>
                 </div>
 
                 <div class="experience-grid">
                     <article class="experience-card reveal">
                         <span class="card-index">01</span>
-                        <h3>Trekking de iniciacion</h3>
-                        <p>Caminatas de un dia para quienes quieren descubrir Mendoza con seguridad, paisajes memorables y una primera experiencia de altura bien guiada.</p>
+                        <h3>Trekking de iniciación</h3>
+                        <p>Caminatas de un día para descubrir Mendoza con seguridad, paisajes memorables y una primera experiencia de altura bien guiada.</p>
                         <ul>
-                            <li>Ideal para principiantes</li>
-                            <li>Ritmo accesible y vistas abiertas</li>
-                            <li>Perfecto para parejas, amigos o turismo corporativo</li>
+                            <li>Duración: 1 día</li>
+                            <li>Nivel: principiante</li>
+                            <li>Incluye traslado, guía y seguro</li>
                         </ul>
+                        <a class="card-link" href="#contacto">Consultar →</a>
                     </article>
 
                     <article class="experience-card reveal">
                         <span class="card-index">02</span>
-                        <h3>Alta montana y desafio</h3>
-                        <p>Ascensos y travesias con una narrativa de superacion. Chasqui posiciona cada salida como una experiencia cuidada, no como una simple excursion.</p>
+                        <h3>Alta montaña y desafío</h3>
+                        <p>Ascensos y travesías en el Cordón del Plata y rutas de progresión técnica con logística pensada para maximizar seguridad.</p>
                         <ul>
-                            <li>Cordon del Plata y rutas de progresion</li>
-                            <li>Preparacion fisica y tecnica segun objetivo</li>
-                            <li>Logistica pensada para maximizar seguridad</li>
+                            <li>Duración: 2 a 5 días</li>
+                            <li>Nivel: intermedio / avanzado</li>
+                            <li>Campamento incluido</li>
                         </ul>
+                        <a class="card-link" href="#contacto">Consultar →</a>
                     </article>
 
                     <article class="experience-card reveal">
                         <span class="card-index">03</span>
                         <h3>Expediciones personalizadas</h3>
-                        <p>Programas a medida para viajeros, grupos privados o marcas que buscan una experiencia con relato, identidad y una produccion visual fuerte.</p>
+                        <p>Programas a medida para grupos privados, empresas o viajeros que buscan una experiencia con identidad, seguridad y producción visual.</p>
                         <ul>
-                            <li>Diseño segun nivel y fechas</li>
-                            <li>Posibilidad de contenido de marca o equipo</li>
+                            <li>Diseño según nivel y fechas</li>
+                            <li>Contenido fotográfico incluible</li>
                             <li>Ideal para propuestas premium</li>
                         </ul>
+                        <a class="card-link" href="#contacto">Consultar →</a>
                     </article>
                 </div>
             </section>
 
+            <!-- PAQUETES -->
+            <section class="section section-packages" id="paquetes">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Paquetes</p>
+                    <h2>Logística completa. Sin sorpresas.</h2>
+                    <p>Elegí el nivel de servicio que mejor se ajusta a tu aventura. Todos los paquetes incluyen guía certificado y seguro de montaña.</p>
+                </div>
+
+                <div class="packages-grid reveal">
+                    <div class="package-card">
+                        <span class="package-tier">Esencial</span>
+                        <h3>Trekking de un día</h3>
+                        <ul class="package-includes">
+                            <li>Guía certificado AAGM</li>
+                            <li>Seguro de montaña</li>
+                            <li>Traslado desde Mendoza</li>
+                            <li>Equipamiento básico</li>
+                        </ul>
+                        <a class="button button-secondary" href="#contacto">Ver disponibilidad</a>
+                    </div>
+
+                    <div class="package-card package-card-featured">
+                        <span class="package-tier">Completo</span>
+                        <h3>Expedición multi-día</h3>
+                        <ul class="package-includes">
+                            <li>Guía certificado AAGM</li>
+                            <li>Seguro de montaña</li>
+                            <li>Traslados completos</li>
+                            <li>Campamento y logística</li>
+                            <li>Equipamiento técnico</li>
+                            <li>Alimentación en ruta</li>
+                        </ul>
+                        <a class="button button-primary" href="#contacto">Ver disponibilidad</a>
+                    </div>
+
+                    <div class="package-card">
+                        <span class="package-tier">Premium</span>
+                        <h3>Privado a medida</h3>
+                        <ul class="package-includes">
+                            <li>Todo lo del paquete Completo</li>
+                            <li>Programa 100% personalizado</li>
+                            <li>Alojamiento en Mendoza</li>
+                            <li>Producción fotográfica</li>
+                            <li>Contenido de marca</li>
+                        </ul>
+                        <a class="button button-secondary" href="#contacto">Cotizar</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- POR QUÉ CHASQUI -->
             <section class="section section-differential" id="diferencial">
                 <div class="differential-layout">
                     <div class="differential-copy reveal">
-                        <p class="eyebrow">Por que Chasqui</p>
-                        <h2>Tradicion, velocidad y conocimiento del terreno.</h2>
-                        <p>El nombre remite a los mensajeros incas: personas entrenadas para moverse con rapidez, precision y lectura del camino. Esa idea se transforma aqui en una promesa clara de marca.</p>
+                        <p class="eyebrow">Por qué Chasqui</p>
+                        <h2>Tradición, velocidad y lectura del terreno.</h2>
+                        <p>El nombre remite a los mensajeros incas: personas entrenadas para moverse con rapidez y precisión. Esa idea se transforma en una promesa clara de servicio.</p>
                         <div class="feature-list">
                             <article>
                                 <h3>Calidez humana</h3>
-                                <p>Atencion cercana antes, durante y despues de cada salida. La experiencia tiene tono profesional, pero nunca frio.</p>
+                                <p>Atención cercana antes, durante y después de cada salida. Profesionalismo con trato real, no corporativo.</p>
                             </article>
                             <article>
-                                <h3>Lectura real de montana</h3>
-                                <p>Planeamiento con criterio tecnico, entendiendo el terreno mendocino, sus contrastes y sus exigencias.</p>
+                                <h3>Lectura real de montaña</h3>
+                                <p>Planificación con criterio técnico: terreno mendocino, clima, altitud y ritmo del grupo.</p>
                             </article>
                             <article>
-                                <h3>Estetica con identidad</h3>
-                                <p>Piedra, nieve, ocre y verde profundo construyen un universo visual distinto al tipico sitio de aventura generico.</p>
+                                <h3>Sostenibilidad activa</h3>
+                                <p>Turismo responsable: gestionamos residuos, respetamos flora y fauna y apoyamos comunidades locales.</p>
                             </article>
                         </div>
                     </div>
 
                     <div class="differential-visual reveal">
                         <div class="visual-card visual-card-main">
-                            <span>Postales iconicas</span>
-                            <h3>Aconcagua, Cordillera y cielos limpios</h3>
-                            <p>Este bloque puede reemplazarse por fotos reales exportadas desde Instagram para reforzar autenticidad sin cambiar el layout.</p>
+                            <span>Mendoza · Andes</span>
+                            <h3>Aconcagua, Cordón del Plata y cielos limpios</h3>
                         </div>
                         <div class="visual-mini-grid">
-                            <div class="visual-card visual-card-alt">Clientes sonriendo despues de la cumbre</div>
-                            <div class="visual-card visual-card-alt">Campamentos, texturas de roca y equipo tecnico</div>
+                            <div class="visual-card visual-card-alt">Cumbre y compañerismo</div>
+                            <div class="visual-card visual-card-alt">Campamentos en altura</div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- INSTAGRAM -->
+            <section class="section section-instagram" id="instagram">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Instagram</p>
+                    <h2>Expediciones en vivo desde la montaña</h2>
+                    <p>Seguí las salidas, cumbres y momentos del equipo Chasqui en Mendoza.</p>
+                </div>
+
+                <!-- Para activar los embeds: abre cada post en Instagram, copia la URL
+                     del post (ej: https://www.instagram.com/p/ABC123/) y reemplazá
+                     el atributo data-instgrm-permalink de cada blockquote con esa URL. -->
+                <div class="instagram-row-shell reveal">
+                    <div class="instagram-post-slot">
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/chasqui_aventura/" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="instagram-post-slot">
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/chasqui_aventura/" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="instagram-post-slot">
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/chasqui_aventura/" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="instagram-post-slot">
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/chasqui_aventura/" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="instagram-post-slot">
+                        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/chasqui_aventura/" data-instgrm-version="14"></blockquote>
+                    </div>
+                </div>
+                <p class="instagram-fallback">Ver perfil completo en <a href="https://www.instagram.com/chasqui_aventura/" target="_blank" rel="noreferrer">@chasqui_aventura</a>.</p>
+            </section>
+
+            <!-- HISTORIAS -->
             <section class="section section-stories" id="historias">
                 <div class="section-heading reveal">
                     <p class="eyebrow">Historias reales</p>
-                    <h2>La prueba social debe sentirse vivida, no decorativa.</h2>
-                    <p>Esta seccion esta pensada para reemplazar los fondos por material real del Instagram de Chasqui: sonrisas, esfuerzo, paisajes y llegada a cumbre.</p>
+                    <h2>Cada cumbre tiene una historia que vale la pena contar.</h2>
+                    <p>Sonrisas, esfuerzo, paisaje y llegada a cumbre: así se ve una expedición Chasqui.</p>
                 </div>
 
                 <div class="stories-grid">
                     <article class="story-card story-card-wide reveal">
                         <div class="story-media story-media-dawn"></div>
                         <div class="story-copy">
-                            <span class="story-label">Foto sugerida</span>
-                            <h3>Amanecer sobre la ruta</h3>
-                            <p>Ideal para una imagen horizontal con luz rasante, aire frio y montanas abiertas. Funciona como ancla emocional de la pagina.</p>
+                            <span class="story-label">Amanecer</span>
+                            <h3>Luz rasante sobre el Cordón del Plata</h3>
+                            <p>El momento de arrancar: frío, aire limpio y la montaña abriéndose delante del grupo.</p>
                         </div>
                     </article>
 
                     <article class="story-card reveal">
                         <div class="story-media story-media-faces"></div>
                         <div class="story-copy">
-                            <span class="story-label">Instagram real</span>
-                            <h3>Caras felices en la experiencia</h3>
-                            <p>La conversion mejora cuando aparecen expresiones reales: alegria, descanso, orgullo y companerismo.</p>
+                            <span class="story-label">Equipo</span>
+                            <h3>Cumbre compartida, alegría real</h3>
+                            <p>La energía de llegar juntos es lo que hace que cada salida sea irrepetible.</p>
                         </div>
                     </article>
 
                     <article class="story-card reveal">
                         <div class="story-media story-media-summit"></div>
                         <div class="story-copy">
-                            <span class="story-label">Paisaje iconico</span>
-                            <h3>Aconcagua y Cordon del Plata</h3>
-                            <p>Las montanas reconocibles de Mendoza son argumento visual. Conviene priorizar encuadres con escala humana.</p>
+                            <span class="story-label">Paisaje</span>
+                            <h3>La Cordillera desde adentro</h3>
+                            <p>Vistas que no se consiguen desde ninguna carretera ni mirador. Solo a pie.</p>
                         </div>
                     </article>
                 </div>
             </section>
 
+            <!-- TESTIMONIOS -->
             <section class="section section-testimonials">
                 <div class="section-heading reveal">
                     <p class="eyebrow">Confianza</p>
-                    <h2>Profesionales en la organizacion. Humanos en el trato.</h2>
+                    <h2>Profesionales en la organización. Humanos en el trato.</h2>
                 </div>
 
                 <div class="testimonial-grid">
                     <blockquote class="testimonial reveal">
-                        <p>"Se noto desde el primer mensaje que no era una salida improvisada. Todo estaba ordenado, claro y adaptado a nuestro nivel."</p>
-                        <cite>Grupo privado, Mendoza</cite>
+                        <p>"Desde el primer mensaje se notó que no era una salida improvisada. Todo claro, ordenado y adaptado a nuestro ritmo. Volvemos seguro."</p>
+                        <cite>Grupo privado · Mendoza</cite>
                     </blockquote>
                     <blockquote class="testimonial reveal">
-                        <p>"La mezcla entre seguridad, paisaje y buena energia fue impecable. Volveriamos a elegirlos para una travesia mas exigente."</p>
-                        <cite>Trekkers principiantes</cite>
+                        <p>"La mezcla de seguridad, paisaje y buena energía fue impecable. El guía conocía cada piedra del camino. Experiencia única."</p>
+                        <cite>Trekkers principiantes · Buenos Aires</cite>
                     </blockquote>
                     <blockquote class="testimonial reveal">
-                        <p>"Subir con gente que conoce la montana cambia todo. Te sentis acompanado de verdad, no solo guiado."</p>
-                        <cite>Expedicion Cordillera</cite>
+                        <p>"Organizamos una salida corporativa y superó todas las expectativas. Un equipo que hace que la montaña se sienta accesible para todos."</p>
+                        <cite>Empresa privada · Mendoza</cite>
                     </blockquote>
                 </div>
             </section>
 
+            <!-- CTA / CONTACTO -->
             <section class="section section-cta" id="contacto">
                 <div class="cta-shell reveal">
                     <div class="cta-copy-block">
-                        <p class="eyebrow">Reserva</p>
-                        <h2>Planifiquemos una salida que se vea bien, se sienta segura y quede para recordar.</h2>
-                        <p>Este cierre empuja la conversion con un mensaje directo. Cuando tengas el canal final, se puede conectar a WhatsApp, formulario o Instagram DM.</p>
+                        <p class="eyebrow">Reserva tu lugar</p>
+                        <h2>Planifiquemos una salida que quede para siempre.</h2>
+                        <p>Escribinos con tu nivel, fechas disponibles y el tipo de aventura que buscás. Te respondemos en menos de 24 horas.</p>
+                        <div class="cta-contact-links">
+                            <a class="button button-primary" href="https://wa.me/5492612345678?text=Hola%2C%20quiero%20consultar%20por%20una%20expedici%C3%B3n%20con%20Chasqui" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+                            <a class="button button-secondary" href="https://www.instagram.com/chasqui_aventura/" target="_blank" rel="noreferrer">Instagram DM</a>
+                        </div>
                     </div>
                     <form class="contact-form" id="contacto-form">
                         <label>
                             <span>Nombre</span>
-                            <input type="text" name="nombre" placeholder="Como te llamas">
+                            <input type="text" name="nombre" placeholder="¿Cómo te llamás?" autocomplete="given-name">
                         </label>
                         <label>
-                            <span>Nivel</span>
+                            <span>Email</span>
+                            <input type="email" name="email" placeholder="tu@email.com" autocomplete="email">
+                        </label>
+                        <label>
+                            <span>Nivel de experiencia</span>
                             <select name="nivel">
-                                <option value="">Selecciona tu experiencia</option>
-                                <option>Principiante</option>
-                                <option>Intermedio</option>
-                                <option>Avanzado</option>
+                                <option value="">Seleccioná tu experiencia</option>
+                                <option value="principiante">Principiante — primera vez en montaña</option>
+                                <option value="intermedio">Intermedio — trekking previo</option>
+                                <option value="avanzado">Avanzado — expediciones de varios días</option>
                             </select>
                         </label>
                         <label>
-                            <span>Tu objetivo</span>
-                            <textarea name="objetivo" rows="4" placeholder="Contanos que tipo de aventura queres vivir"></textarea>
+                            <span>¿Qué aventura buscás?</span>
+                            <textarea name="objetivo" rows="4" placeholder="Contanos tus fechas, destino deseado o cualquier pregunta"></textarea>
                         </label>
-                        <div class="cta-actions">
-                            <button class="button button-primary" type="submit">Quiero mi aventura</button>
-                            <a class="button button-secondary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Ver Instagram</a>
-                        </div>
+                        <button class="button button-primary" type="submit">Enviar consulta</button>
                     </form>
                 </div>
             </section>
+
         </main>
 
         <footer class="footer">
-            <div>
-                <strong>Chasqui</strong>
-                <p>Trekking y expediciones personalizadas en Mendoza con una identidad visual conectada a la altura, la tierra y la nieve.</p>
+            <div class="footer-brand">
+                <strong class="footer-logo">Chasqui</strong>
+                <p>Trekking y expediciones personalizadas en Mendoza. Desde el Cordón del Plata hasta el Aconcagua, con guías certificados y logística completa.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/chasqui_aventura/" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="https://wa.me/5492612345678" target="_blank" rel="noreferrer">WhatsApp</a>
+                </div>
             </div>
-            <div>
-                <span>Base visual sugerida</span>
-                <p>Reemplazar fondos del hero y galeria por material real de Instagram para cerrar la version final comercial.</p>
+            <div class="footer-links">
+                <strong>Expediciones</strong>
+                <nav>
+                    <a href="#experiencias">Trekking de iniciación</a>
+                    <a href="#experiencias">Alta montaña</a>
+                    <a href="#experiencias">Privado y corporativo</a>
+                </nav>
+            </div>
+            <div class="footer-links">
+                <strong>Paquetes</strong>
+                <nav>
+                    <a href="#paquetes">Esencial</a>
+                    <a href="#paquetes">Completo</a>
+                    <a href="#paquetes">Premium</a>
+                </nav>
+            </div>
+            <div class="footer-links">
+                <strong>Contacto</strong>
+                <nav>
+                    <a href="#contacto">Formulario de consulta</a>
+                    <a href="https://www.instagram.com/chasqui_aventura/" target="_blank" rel="noreferrer">@chasqui_aventura</a>
+                    <a href="mailto:hola@chasquiaventura.com">hola@chasquiaventura.com</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Chasqui. Todos los derechos reservados. Mendoza, Argentina.</p>
+                <p>Guías habilitados por la <abbr title="Asociación Argentina de Guías de Montaña">AAGM</abbr>.</p>
             </div>
         </footer>
     </div>
 
+    <!-- Botón flotante de WhatsApp -->
+    <a class="whatsapp-fab" href="https://wa.me/5492612345678?text=Hola%2C%20quiero%20consultar%20por%20una%20expedici%C3%B3n%20con%20Chasqui" target="_blank" rel="noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" width="30" height="30">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script async src="https://www.instagram.com/embed.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
