@@ -180,6 +180,91 @@ img {
     transform: scaleX(1);
 }
 
+/* ── Dropdown de expediciones ─────────────── */
+.topnav-dropdown {
+    position: relative;
+}
+
+.topnav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: color 160ms ease;
+}
+
+.topnav-dropdown-trigger:hover,
+.topnav-dropdown-trigger:focus-visible {
+    color: var(--moss);
+    outline: none;
+}
+
+.topnav-dropdown-caret {
+    font-size: 0.7rem;
+    transition: transform 220ms ease;
+    display: inline-block;
+}
+
+.topnav-dropdown.is-open .topnav-dropdown-caret {
+    transform: rotate(180deg);
+}
+
+.topnav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    border-radius: 18px;
+    border: 1px solid rgba(45, 70, 54, 0.12);
+    background: rgba(244, 247, 246, 0.97);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 16px 36px rgba(44, 62, 80, 0.14);
+    z-index: 30;
+}
+
+.topnav-dropdown.is-open .topnav-dropdown-menu {
+    display: grid;
+    gap: 2px;
+    animation: dropdown-in 180ms ease;
+}
+
+@keyframes dropdown-in {
+    from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.topnav-dropdown-menu a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    transition: background 150ms ease, color 150ms ease;
+}
+
+.topnav-dropdown-menu a::after {
+    display: none;
+}
+
+.topnav-dropdown-menu a:hover,
+.topnav-dropdown-menu a:focus-visible {
+    background: rgba(45, 70, 54, 0.1);
+    color: var(--moss);
+    outline: none;
+}
+
 .lang-switch {
     display: inline-flex;
     align-items: center;
@@ -623,6 +708,16 @@ main > .section:nth-of-type(even) {
     width: 100%;
 }
 
+.section-instagram .section-heading {
+    max-width: none;
+    width: 100%;
+}
+
+.section-testimonials .section-heading {
+    max-width: none;
+    width: 100%;
+}
+
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -760,12 +855,12 @@ main > .section:nth-of-type(even) {
 }
 
 .card-index {
-    display: inline-flex;
+    display: flex;
     min-height: 34px;
     padding: 0 12px;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
     border-radius: 999px;
     color: var(--snow);
     background: linear-gradient(145deg, var(--moss), #4a6654);
@@ -1447,6 +1542,36 @@ main > .section:nth-of-type(even) {
         border-radius: 18px;
         background: rgba(244, 247, 246, 0.95);
         border: 1px solid rgba(45, 70, 54, 0.12);
+    }
+
+    .topnav-dropdown {
+        width: 100%;
+    }
+
+    .topnav-dropdown-trigger {
+        width: 100%;
+        padding: 10px 8px;
+        border-radius: 10px;
+        justify-content: space-between;
+    }
+
+    .topnav-dropdown-trigger:hover {
+        background: rgba(181, 139, 76, 0.12);
+    }
+
+    .topnav-dropdown-menu {
+        position: static;
+        transform: none;
+        min-width: unset;
+        border-radius: 10px;
+        margin-top: 4px;
+        box-shadow: none;
+        border-color: rgba(45, 70, 54, 0.1);
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .topnav-dropdown.is-open .topnav-dropdown-menu {
+        animation: none;
     }
 
     .topbar.menu-open .topnav {

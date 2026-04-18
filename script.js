@@ -4,6 +4,7 @@ const contactForm = document.querySelector('.contact-form');
 const topbar = document.querySelector('.topbar');
 const menuToggle = document.querySelector('.menu-toggle');
 const topnav = document.querySelector('.topnav');
+const dropdownWrappers = Array.from(document.querySelectorAll('.topnav-dropdown'));
 const experienceGrid = document.querySelector('.experience-grid');
 const experiencePrev = document.querySelector('.carousel-arrow-prev');
 const experienceNext = document.querySelector('.carousel-arrow-next');
@@ -96,6 +97,42 @@ if (langButtons.length) {
         });
     });
 }
+
+dropdownWrappers.forEach((wrapper) => {
+    const trigger = wrapper.querySelector('.topnav-dropdown-trigger');
+    const menu = wrapper.querySelector('.topnav-dropdown-menu');
+
+    if (!(trigger instanceof HTMLButtonElement) || !menu) {
+        return;
+    }
+
+    const openDropdown = () => {
+        wrapper.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeDropdown = () => {
+        wrapper.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+    };
+
+    trigger.addEventListener('click', () => {
+        wrapper.classList.contains('is-open') ? closeDropdown() : openDropdown();
+    });
+
+    wrapper.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeDropdown();
+            trigger.focus();
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!wrapper.contains(event.target)) {
+            closeDropdown();
+        }
+    });
+});
 
 if (topbar && menuToggle && topnav) {
     const closeMenu = () => {
