@@ -53,6 +53,36 @@
         }
         .exp-back { width: fit-content; }
         main { padding-bottom: 60px; }
+
+        .exp-cards {
+            width: var(--container);
+            margin: 28px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .exp-card {
+            padding: 32px 28px;
+            border-radius: 24px;
+            border: 1px solid rgba(45, 70, 54, 0.10);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
+            display: grid;
+            gap: 10px;
+        }
+        .exp-card h2 {
+            font-family: "Fraunces", serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0;
+        }
+        .exp-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(44, 62, 80, 0.80);
+        }
     </style>
 </head>
 <body>
@@ -104,13 +134,35 @@
                 <p class="eyebrow">Expedición</p>
                 <h1>Perú - Bolivia</h1>
             </div>
-            <div class="exp-body">
-                <p>Expediciones internacionales en los Andes centrales, combinando altura, cultura local y objetivos de montaña a medida.</p>
-                <ul class="exp-list">
-                    <li>Duración: a medida según objetivo</li>
-                    <li>Nivel: intermedio a avanzado</li>
-                    <li>Incluye coordinación completa de logística internacional</li>
-                </ul>
+
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <h2>Choquequirao</h2>
+                    <p>Trekking a la ciudadela inca perdida entre cañones, considerada la hermana mayor de Machu Picchu.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Cordillera Huayhuash</h2>
+                    <p>Circuito de alta montaña por una de las cordilleras más bellas del planeta, con lagunas turquesas y cumbres de más de 6.000 msnm.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Salkantay Trek</h2>
+                    <p>Ruta alternativa a Machu Picchu cruzando el nevado Salkantay a 4.630 msnm, entre glaciares y selva nublada.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Ausangate Trek</h2>
+                    <p>Circuito de alta altura alrededor del Apu Ausangate, con aguas termales, llamas y paisajes de puna infinita.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Salkantay - Machu Picchu</h2>
+                    <p>La combinación perfecta: paso de alta montaña y llegada a la ciudadela inca más famosa del mundo.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Camino del Inca Clásico</h2>
+                    <p>El trek más icónico de América: cuatro días por caminos de piedra inca hasta la Puerta del Sol en Machu Picchu.</p>
+                </div>
+            </div>
+
+            <div style="width: var(--container); margin: 28px auto 0;">
                 <a class="button button-secondary exp-back" href="index.html#experiencias">← Volver a expediciones</a>
             </div>
         </main>

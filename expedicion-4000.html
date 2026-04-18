@@ -53,6 +53,36 @@
         }
         .exp-back { width: fit-content; }
         main { padding-bottom: 60px; }
+
+        .exp-cards {
+            width: var(--container);
+            margin: 28px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .exp-card {
+            padding: 32px 28px;
+            border-radius: 24px;
+            border: 1px solid rgba(45, 70, 54, 0.10);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
+            display: grid;
+            gap: 10px;
+        }
+        .exp-card h2 {
+            font-family: "Fraunces", serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0;
+        }
+        .exp-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(44, 62, 80, 0.80);
+        }
     </style>
 </head>
 <body>
@@ -104,13 +134,47 @@
                 <p class="eyebrow">Expedición</p>
                 <h1>+4000 msnm</h1>
             </div>
-            <div class="exp-body">
-                <p>Programa de altura para superar los 4.000 msnm con planificación detallada, aclimatación y guía profesional.</p>
-                <ul class="exp-list">
-                    <li>Duración estimada: 2 a 3 días</li>
-                    <li>Nivel: intermedio a avanzado</li>
-                    <li>Incluye campamento y soporte técnico</li>
-                </ul>
+
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <h2>Cerro Las Leñas</h2>
+                    <p>Ascenso por el macizo de Las Leñas con vistas privilegiadas al valle del río Salado.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>3 x Cuatromil</h2>
+                    <p>Programa encadenado de tres cumbres de más de 4.000 msnm en un mismo circuito de aclimatación.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Cerro Penitentes</h2>
+                    <p>Clásico de altura mendocino, ideal para la aclimatación previa a objetivos más exigentes en la cordillera.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Volcán Payún</h2>
+                    <p>Ascenso al imponente volcán del sur mendocino, rodeado de campos de lava y paisajes lunares únicos.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Volcán Cerro Nevado</h2>
+                    <p>Expedición al volcán activo más austral de Mendoza, con un entorno de alta puna y coladas volcánicas.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Tilcara - Calilegua</h2>
+                    <p>Recorrido por la Quebrada de Humahuaca y la selva jujeña, combinando altura, cultura y biodiversidad.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Huella Choicana</h2>
+                    <p>Travesía por la huella histórica de los arrieros patagónicos entre valles y cerros del sur cuyano.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Tafí del Valle - Siambón</h2>
+                    <p>Trekking por los valles tucumanos, entre bosques de alisos, piedras tacitas y paisajes de altura.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Avión de los Uruguayos</h2>
+                    <p>Travesía al sitio del accidente de 1972 en los Andes, una experiencia de montaña cargada de historia.</p>
+                </div>
+            </div>
+
+            <div style="width: var(--container); margin: 28px auto 0;">
                 <a class="button button-secondary exp-back" href="index.html#experiencias">← Volver a expediciones</a>
             </div>
         </main>
