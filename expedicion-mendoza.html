@@ -55,6 +55,36 @@
             width: fit-content;
         }
         main { padding-bottom: 60px; }
+
+        .exp-cards {
+            width: var(--container);
+            margin: 28px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .exp-card {
+            padding: 32px 28px;
+            border-radius: 24px;
+            border: 1px solid rgba(45, 70, 54, 0.10);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
+            display: grid;
+            gap: 10px;
+        }
+        .exp-card h2 {
+            font-family: "Fraunces", serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0;
+        }
+        .exp-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(44, 62, 80, 0.80);
+        }
     </style>
 </head>
 <body>
@@ -106,13 +136,35 @@
                 <p class="eyebrow">Expedición</p>
                 <h1>Mendoza</h1>
             </div>
-            <div class="exp-body">
-                <p>Salida pensada para quienes quieren conocer rutas clásicas de trekking y ascenso en la cordillera mendocina con enfoque técnico y progresivo.</p>
-                <ul class="exp-list">
-                    <li>Duración estimada: 1 a 2 días</li>
-                    <li>Nivel: principiante a intermedio</li>
-                    <li>Incluye guía habilitado y logística base</li>
-                </ul>
+
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <h2>Trekking San Rafael</h2>
+                    <p>Recorrido por los senderos del sur mendocino con vistas al lago Diamante y la cordillera patagónica.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Huella Puelche</h2>
+                    <p>Travesía por la ruta del viento puelche, cruzando valles de altura con flora y fauna autóctona.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Experiencia en Los Andes</h2>
+                    <p>Inmersión en la alta montaña andina con campamentos, aclimatación progresiva y guía profesional.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Experiencia con Chivo</h2>
+                    <p>Jornada rural junto a crianceros locales, conociendo la cultura del chivo criollo en las laderas cordilleranas.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Asado y guitarreada cuyana</h2>
+                    <p>Una noche de fogón, asado a las brasas y cueca cuyana bajo el cielo estrellado de Mendoza.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Volcán Cerro Diamante</h2>
+                    <p>Ascenso al volcán Cerro Diamante con vistas panorámicas al lago y los volcanes de la cordillera del sur.</p>
+                </div>
+            </div>
+
+            <div style="width: var(--container); margin: 28px auto 0;">
                 <a class="button button-secondary exp-back" href="index.html#experiencias">← Volver a expediciones</a>
             </div>
         </main>

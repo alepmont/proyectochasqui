@@ -53,6 +53,202 @@
         }
         .exp-back { width: fit-content; }
         main { padding-bottom: 60px; }
+
+        .exp-cards {
+            width: var(--container);
+            margin: 28px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .exp-card {
+            padding: 32px 28px;
+            border-radius: 24px;
+            border: 1px solid rgba(45, 70, 54, 0.10);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
+            display: grid;
+            gap: 10px;
+        }
+        .exp-card h2 {
+            font-family: "Fraunces", serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0;
+        }
+        .exp-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(44, 62, 80, 0.80);
+        }
+        .exp-card-san-francisco {
+            background:
+                linear-gradient(180deg, rgba(18, 29, 23, 0.35), rgba(18, 29, 23, 0.72)),
+                url("imagen/sanfrancisco.jpeg");
+            background-size: cover;
+            background-position: center;
+            border-color: rgba(255, 255, 255, 0.32);
+        }
+        .exp-card-san-francisco h2,
+        .exp-card-san-francisco p {
+            color: rgba(244, 247, 246, 0.96);
+        }
+        .exp-card-san-francisco .exp-card-btn {
+            border-color: rgba(244, 247, 246, 0.92);
+            color: #f4f7f6;
+            background: rgba(18, 29, 23, 0.22);
+        }
+        .exp-card-san-francisco .exp-card-btn:hover {
+            background: rgba(244, 247, 246, 0.96);
+            color: #1f3126;
+        }
+        .exp-card-btn {
+            margin-top: 56px;
+            width: auto;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1.5px solid var(--moss);
+            background: transparent;
+            color: var(--moss);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: start;
+            align-self: start;
+            white-space: nowrap;
+            line-height: 1.2;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s;
+        }
+        .exp-card-btn:hover {
+            background: var(--moss);
+            color: #fff;
+        }
+
+        /* Modal */
+        .exp-modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(18, 29, 23, 0.62);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .exp-modal-backdrop.is-open {
+            display: flex;
+        }
+        .exp-modal {
+            background: #fff;
+            border-radius: 28px;
+            padding: 44px 40px;
+            max-width: 560px;
+            width: 100%;
+            box-shadow: 0 32px 64px rgba(18, 29, 23, 0.22);
+            position: relative;
+            display: grid;
+            gap: 16px;
+        }
+        .exp-modal h3 {
+            font-family: "Fraunces", serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0;
+        }
+        .exp-modal p {
+            margin: 0;
+            line-height: 1.75;
+            color: rgba(44, 62, 80, 0.85);
+        }
+        .exp-modal ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.9;
+            color: rgba(44, 62, 80, 0.85);
+        }
+        .exp-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: rgba(44, 62, 80, 0.5);
+            line-height: 1;
+        }
+        .exp-modal-close:hover { color: var(--moss); }
+        .exp-modal--rich {
+            max-width: 680px;
+            max-height: 88vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            gap: 0;
+        }
+        .exp-modal-alt {
+            display: block;
+            font-family: "Manrope", sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ochre, #B58B4C);
+            margin-top: 4px;
+        }
+        .exp-modal-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 4px;
+        }
+        .exp-badge {
+            padding: 4px 14px;
+            border-radius: 999px;
+            background: rgba(45, 70, 54, 0.10);
+            color: var(--moss);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .exp-modal-section {
+            margin-top: 22px;
+        }
+        .exp-modal-section h4 {
+            font-family: "Fraunces", serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(45, 70, 54, 0.12);
+        }
+        .exp-modal-itinerary {
+            margin: 0;
+            padding-left: 22px;
+            display: grid;
+            gap: 6px;
+            color: rgba(44, 62, 80, 0.85);
+            line-height: 1.65;
+            font-size: 0.9rem;
+        }
+        .exp-modal--rich ul {
+            margin: 0;
+            padding-left: 20px;
+            display: grid;
+            gap: 6px;
+            color: rgba(44, 62, 80, 0.85);
+            line-height: 1.65;
+            font-size: 0.9rem;
+        }
+        .exp-modal--rich .button {
+            margin-top: 24px;
+            width: fit-content;
+        }
     </style>
 </head>
 <body>
@@ -104,16 +300,87 @@
                 <p class="eyebrow">Expedición</p>
                 <h1>+6000 msnm</h1>
             </div>
-            <div class="exp-body">
-                <p>Objetivos de alta exigencia para cumbres de 6.000 msnm con logística completa e integral de expedición.</p>
-                <ul class="exp-list">
-                    <li>Duración estimada: 5 a 8 días</li>
-                    <li>Nivel: técnico y avanzado</li>
-                    <li>Incluye planificación integral y preparación previa</li>
-                </ul>
+
+            <div class="exp-cards">
+                <div class="exp-card exp-card-san-francisco">
+                    <h2>Volcán San Francisco</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-san-francisco">Ver más info</button>
+                </div>
+                <div class="exp-card">
+                    <h2>Cerro El Plata</h2>
+                    <p>Cumbre de 6.351 msnm en el Cordón del Plata, el gran objetivo de altura del Gran Mendoza.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Volcán Ojos del Sosneado</h2>
+                    <p>Uno de los volcanes más remotos del sur mendocino, con 6.070 msnm y acceso por terrenos de alta exigencia logística.</p>
+                </div>
+                <div class="exp-card">
+                    <h2>Aconcagua</h2>
+                    <p>El techo de América con 6.962 msnm. La expedición de referencia de los Andes, con planificación integral y acompañamiento profesional.</p>
+                </div>
+            </div>
+
+            <div style="width: var(--container); margin: 28px auto 0;">
                 <a class="button button-secondary exp-back" href="index.html#experiencias">← Volver a expediciones</a>
             </div>
         </main>
+
+        <!-- Modal Volcán San Francisco -->
+        <div class="exp-modal-backdrop" id="modal-san-francisco" role="dialog" aria-modal="true" aria-labelledby="modal-sf-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-sf-title">Expedición Volcán San Francisco <span class="exp-modal-alt">6016 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">8 días</span>
+                    <span class="exp-badge">6016 msnm</span>
+                    <span class="exp-badge">Dificultad moderada</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>Ubicada en la mítica Ruta de los Seismiles en Catamarca, esta expedición se adentra en un territorio de volcanes gigantes, salares y lagunas de altura. Desde la localidad de Fiambalá, ascendemos por la Ruta Nacional 60 hacia el imponente Volcán San Francisco, atravesando paisajes ancestrales que narran la historia geológica de los Andes.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Encuentro en Fiambalá (15:00 hs), trámites policiales y charla técnica. Traslado al refugio Pastos Largos (3200 msnm).</li>
+                        <li><strong>Día 2</strong> — Trekking de aclimatación al cerro Coquena o Pastos Largos (4100 msnm) y regreso al refugio.</li>
+                        <li><strong>Día 3</strong> — Traslado al refugio Las Grutas (4000 msnm), trámites de aduana y armado de campamento.</li>
+                        <li><strong>Día 4</strong> — Ascenso al cerro Falso Morocho (4500 msnm) con vistas panorámicas al Volcán Incahuasi.</li>
+                        <li><strong>Día 5</strong> — Ascenso al Volcán Bertrand (5300 msnm) para apreciar su cráter de 4 km de circunferencia.</li>
+                        <li><strong>Día 6</strong> — Jornada de descanso y aclimatación en Refugio Las Grutas.</li>
+                        <li><strong>Día 7</strong> — <strong>Día de Cumbre.</strong> Ascenso al Volcán San Francisco (6016 msnm). Jornada de aproximadamente 14 horas.</li>
+                        <li><strong>Día 8</strong> — Descenso, regreso a Fiambalá y fin de los servicios.</li>
+                    </ol>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>¿Qué incluye?</h4>
+                    <ul>
+                        <li><strong>Traslados:</strong> Transfer in/out desde Fiambalá hacia la cordillera.</li>
+                        <li><strong>Alojamiento:</strong> Refugios de montaña (Pastos Largos y Las Grutas) y carpas de alta montaña si es necesario.</li>
+                        <li><strong>Alimentación:</strong> Pensión completa en la montaña (tarde del día 1 hasta desayuno del día 8).</li>
+                        <li><strong>Seguridad:</strong> Guías certificados, seguro de accidentes, botiquín y comunicación por radio UHF/VHF.</li>
+                        <li><strong>Logística:</strong> Equipo general de cocina, reuniones previas y asistencia permanente.</li>
+                    </ul>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Equipo necesario</h4>
+                    <ul>
+                        <li><strong>Vestimenta (sistema de capas):</strong> Pantalón de trekking, impermeable y térmica. Remera manga larga, buzo polar o windstopper. Campera de duvet e impermeable. Guantes finos, de abrigo impermeables y mitones de duvet.</li>
+                        <li><strong>Calzado:</strong> Botas dobles/rígidas para cumbre, botas de trekking para aproximación. Medias de alta montaña, finas y de trekking.</li>
+                        <li><strong>Equipo técnico y camping:</strong> Mochila 40/50 L, bastones, bolsa de dormir (confort −10 °C), colchoneta, casco y linterna frontal con pilas extra. Lentes categoría 4 o antiparras.</li>
+                        <li><strong>Varios:</strong> Protector solar FPS 60+, labial, mínimo 3 L de agua, vajilla irrompible, kit de aseo y bolsas para residuos.</li>
+                    </ul>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
 
         <footer class="footer">
             <div class="footer-brand">
@@ -165,5 +432,31 @@
 
     <div id="google_translate_element" aria-hidden="true"></div>
     <script src="script.js"></script>
+    <script>
+        const modalSF = document.getElementById('modal-san-francisco');
+        const openBtn = document.querySelector('[aria-controls="modal-san-francisco"]');
+        const closeBtn = modalSF.querySelector('.exp-modal-close');
+
+        openBtn.addEventListener('click', () => {
+            modalSF.classList.add('is-open');
+            closeBtn.focus();
+        });
+        closeBtn.addEventListener('click', () => {
+            modalSF.classList.remove('is-open');
+            openBtn.focus();
+        });
+        modalSF.addEventListener('click', (e) => {
+            if (e.target === modalSF) {
+                modalSF.classList.remove('is-open');
+                openBtn.focus();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalSF.classList.contains('is-open')) {
+                modalSF.classList.remove('is-open');
+                openBtn.focus();
+            }
+        });
+    </script>
 </body>
 </html>
