@@ -137,11 +137,12 @@ img {
 }
 
 .brand-copy strong {
+    font-family: "Herculanum", "Copperplate Gothic", "Copperplate", "Palatino Linotype", serif;
     font-size: 1rem;
 }
 
 .brand-name {
-    font-family: "Herculanum", "Copperplate Gothic", "Copperplate", "Palatino Linotype", serif;
+    font-family: inherit;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-size: 0.92rem;
