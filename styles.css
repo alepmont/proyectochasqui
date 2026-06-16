@@ -277,6 +277,9 @@ img {
 }
 
 .lang-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: 34px;
     min-width: 44px;
     border: 0;
@@ -888,15 +891,31 @@ main > .section:nth-of-type(even) {
 
 .differential-layout {
     display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
     gap: 22px;
-    align-items: center;
+    align-items: stretch;
 }
 
 .differential-copy,
 .differential-visual,
 .cta-shell {
     padding: 30px;
+}
+
+.differential-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.differential-copy p {
+    max-width: 100%;
+}
+
+.differential-copy p + p {
+    margin-top: 1.1rem;
 }
 
 .feature-list {
@@ -922,6 +941,7 @@ main > .section:nth-of-type(even) {
     color: var(--snow);
     background:
         linear-gradient(180deg, rgba(44, 62, 80, 0.08), rgba(44, 62, 80, 0.76));
+    border: none;
     border-radius: 28px;
     overflow: hidden;
 }
@@ -934,6 +954,7 @@ main > .section:nth-of-type(even) {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    border-radius: 28px;
 }
 
 .visual-card-main > * {
