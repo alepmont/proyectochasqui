@@ -276,6 +276,9 @@ img {
 }
 
 .lang-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: 34px;
     min-width: 44px;
     border: 0;
