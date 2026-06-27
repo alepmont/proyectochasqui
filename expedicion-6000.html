@@ -65,10 +65,16 @@
             padding: 32px 28px;
             border-radius: 24px;
             border: 1px solid rgba(45, 70, 54, 0.10);
-            background: rgba(255, 255, 255, 0.88);
             box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
-            display: grid;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
+            min-height: 260px;
+            background: transparent;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            color: rgba(244,247,246,0.96);
         }
         .exp-card h2 {
             font-family: "Fraunces", serif;
@@ -86,9 +92,9 @@
         .exp-card-san-francisco {
             background:
                 linear-gradient(180deg, rgba(18, 29, 23, 0.35), rgba(18, 29, 23, 0.72)),
-                url("imagen/sanfrancisco.jpeg");
+                url("imagen/volcansanfrancisco.jpg");
             background-size: cover;
-            background-position: center;
+            background-position: center bottom;
             border-color: rgba(255, 255, 255, 0.32);
         }
         .exp-card-san-francisco h2,
@@ -104,8 +110,35 @@
             background: rgba(244, 247, 246, 0.96);
             color: #1f3126;
         }
+        .exp-card-aconcagua,
+        .exp-card-el-plata,
+        .exp-card-ojos {
+            background-size: cover;
+            background-position: center bottom;
+            border-color: rgba(255, 255, 255, 0.32);
+        }
+        .exp-card-aconcagua h2,
+        .exp-card-el-plata h2,
+        .exp-card-ojos h2 {
+            color: rgba(244, 247, 246, 0.96);
+            margin-top: 0;
+            text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        }
+        .exp-card-aconcagua .exp-card-btn,
+        .exp-card-el-plata .exp-card-btn,
+        .exp-card-ojos .exp-card-btn {
+            border-color: rgba(244, 247, 246, 0.92);
+            color: #f4f7f6;
+            background: rgba(18, 29, 23, 0.22);
+        }
+        .exp-card-aconcagua .exp-card-btn:hover,
+        .exp-card-el-plata .exp-card-btn:hover,
+        .exp-card-ojos .exp-card-btn:hover {
+            background: rgba(244, 247, 246, 0.96);
+            color: #1f3126;
+        }
         .exp-card-btn {
-            margin-top: 56px;
+            margin-top: auto;
             width: auto;
             padding: 6px 12px;
             border-radius: 999px;
@@ -306,17 +339,17 @@
                     <h2>Volcán San Francisco</h2>
                     <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-san-francisco">Ver más info</button>
                 </div>
-                <div class="exp-card">
+                <div class="exp-card exp-card-el-plata" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/cerroelplata.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
                     <h2>Cerro El Plata</h2>
-                    <p>Cumbre de 6.351 msnm en el Cordón del Plata, el gran objetivo de altura del Gran Mendoza.</p>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-el-plata">Ver más info</button>
                 </div>
-                <div class="exp-card">
+                <div class="exp-card exp-card-ojos" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/ojosdelsalado.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
                     <h2>Volcán Ojos del Sosneado</h2>
-                    <p>Uno de los volcanes más remotos del sur mendocino, con 6.070 msnm y acceso por terrenos de alta exigencia logística.</p>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ojos">Ver más info</button>
                 </div>
-                <div class="exp-card">
+                <div class="exp-card exp-card-aconcagua" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/aconcagua.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
                     <h2>Aconcagua</h2>
-                    <p>El techo de América con 6.962 msnm. La expedición de referencia de los Andes, con planificación integral y acompañamiento profesional.</p>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-aconcagua">Ver más info</button>
                 </div>
             </div>
 
@@ -460,4 +493,3 @@
     </script>
 </body>
 </html>
-
