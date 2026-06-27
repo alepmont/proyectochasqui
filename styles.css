@@ -928,7 +928,6 @@ main > .section:nth-of-type(even) {
     position: relative;
     aspect-ratio: 16 / 9;
     min-height: auto;
-    padding: 28px;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -1677,5 +1676,5 @@ main > .section:nth-of-type(even) {
         width: 52px;
         height: 52px;
     }
+    
 }
-
