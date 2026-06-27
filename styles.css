@@ -1069,9 +1069,7 @@ main > .section:nth-of-type(even) {
     gap: 22px;
     padding: 38px;
     text-align: center;
-    background:
-        radial-gradient(circle at top right, rgba(124, 42, 35, 0.13), transparent 22%),
-        linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(231, 236, 233, 0.9));
+    
 }
 
 .cta-copy-block {
