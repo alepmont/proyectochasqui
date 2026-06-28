@@ -657,13 +657,14 @@ main > .section:nth-of-type(even) {
     gap: 20px;
     margin-top: 0;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     scrollbar-color: transparent transparent;
-    padding-bottom: 8px;
-   
+    padding: 2px 2px 8px;
+    scroll-padding-inline: 2px;
 }
 
 .experience-carousel {
@@ -672,6 +673,7 @@ main > .section:nth-of-type(even) {
     padding-inline: 42px;
     padding-top: 8px;
     padding-bottom: 12px;
+    overflow: hidden;
 }
 
 .experience-grid::-webkit-scrollbar {
@@ -692,15 +694,14 @@ main > .section:nth-of-type(even) {
     height: 100%;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(63, 75, 61, 0.14);
-   
-    transition: transform 220ms ease, 
-    /* box-shadow 220ms ease; */
+    box-shadow: none;
+    transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .experience-grid .experience-card:hover,
 .experience-grid .experience-card:focus-within {
     transform: translateY(-6px);
-   
+    box-shadow: 0 12px 24px rgba(59, 59, 59, 0.08);
 }
 
 .section-experiences .section-heading {
@@ -1127,17 +1128,36 @@ main > .section:nth-of-type(even) {
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 20px 32px;
     margin-top: 26px;
-    padding: 52px 0 0;
+    padding: 34px 0 28px;
     color: rgba(59, 59, 59, 0.82);
     border-top: 1px solid rgba(63, 75, 61, 0.1);
 }
 
-.footer p {
-    line-height: 1.75;
+.footer-minimal {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--charcoal);
+}
+
+.footer-logo-img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .footer-logo {
@@ -1145,24 +1165,20 @@ main > .section:nth-of-type(even) {
     font-family: "Fraunces", serif;
     font-size: 1.6rem;
     color: var(--charcoal);
-    margin-bottom: 14px;
-}
-
-.footer-brand p {
-    font-size: 0.95rem;
-    max-width: 36ch;
 }
 
 .footer-social {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 14px;
-    margin-top: 16px;
+    margin-top: 14px;
 }
 
 .footer-social a {
     font-weight: 700;
     color: var(--moss);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     border-bottom: 1px solid rgba(63, 75, 61, 0.3);
     padding-bottom: 2px;
     transition: border-color 180ms ease;
@@ -1170,48 +1186,6 @@ main > .section:nth-of-type(even) {
 
 .footer-social a:hover {
     border-color: var(--moss);
-}
-
-.footer-links strong {
-    display: block;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--charcoal);
-    margin-bottom: 14px;
-}
-
-.footer-links nav {
-    display: grid;
-    gap: 10px;
-}
-
-.footer-links nav a {
-    font-size: 0.93rem;
-    color: rgba(59, 59, 59, 0.72);
-    transition: color 180ms ease;
-}
-
-.footer-links nav a:hover {
-    color: var(--moss);
-}
-
-.footer-bottom {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0 42px;
-    border-top: 1px solid rgba(63, 75, 61, 0.08);
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: rgba(59, 59, 59, 0.55);
-}
-
-.footer-bottom p {
-    margin: 0;
-    line-height: 1.5;
 }
 
 .reveal {
