@@ -338,8 +338,8 @@ body {
 
 .button-primary {
     color: #fff;
-    background: linear-gradient(135deg, #A3554C, var(--adventure));
-    box-shadow: 0 12px 30px rgba(124, 42, 35, 0.28);
+    background: var(--adventure);
+    
 }
 
 .button-secondary {
@@ -663,6 +663,7 @@ main > .section:nth-of-type(even) {
     scrollbar-width: none;
     scrollbar-color: transparent transparent;
     padding-bottom: 8px;
+   
 }
 
 .experience-carousel {
@@ -678,11 +679,11 @@ main > .section:nth-of-type(even) {
 }
 
 .experience-grid::-webkit-scrollbar-track {
-    background: transparent;
+     background: transparent; 
 }
 
 .experience-grid::-webkit-scrollbar-thumb {
-    background: var(--ochre);
+     background: var(--ochre); 
     border-radius: 999px;
 }
 
@@ -691,14 +692,15 @@ main > .section:nth-of-type(even) {
     height: 100%;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(63, 75, 61, 0.14);
-    box-shadow: 0 20px 38px rgba(59, 59, 59, 0.14);
-    transition: transform 220ms ease, box-shadow 220ms ease;
+   
+    transition: transform 220ms ease, 
+    /* box-shadow 220ms ease; */
 }
 
 .experience-grid .experience-card:hover,
 .experience-grid .experience-card:focus-within {
     transform: translateY(-6px);
-    box-shadow: 0 26px 44px rgba(59, 59, 59, 0.18);
+   
 }
 
 .section-experiences .section-heading {
@@ -861,7 +863,7 @@ main > .section:nth-of-type(even) {
     margin: 0 auto 18px;
     border-radius: 999px;
     color: var(--snow);
-    background: linear-gradient(145deg, var(--moss), #5B4A42);
+    background: linear-gradient(145deg, var(--adventure) );
     font-weight: 800;
     font-size: 0.76rem;
     letter-spacing: 0.05em;
@@ -1481,9 +1483,11 @@ main > .section:nth-of-type(even) {
     }
 
     .experience-carousel {
-        padding-inline: 36px;
-    }
-
+    overflow: visible;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    padding-inline: 42px;
+}
     .hero-panel {
         align-self: auto;
         margin-top: 0;
