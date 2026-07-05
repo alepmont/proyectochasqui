@@ -69,6 +69,7 @@
             box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
             display: grid;
             gap: 10px;
+            min-height: 240px;
         }
         .exp-card h2 {
             font-family: "Fraunces", serif;
@@ -82,6 +83,123 @@
             font-size: 0.95rem;
             line-height: 1.7;
             color: rgba(44, 62, 80, 0.80);
+        }
+        .exp-card-btn {
+            margin-top: auto;
+            width: auto;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1.5px solid var(--moss);
+            background: transparent;
+            color: var(--moss);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            justify-self: start;
+            align-self: start;
+            white-space: nowrap;
+            line-height: 1.2;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s;
+        }
+        .exp-card-btn:hover {
+            background: var(--moss);
+            color: #fff;
+        }
+        .exp-modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(18, 29, 23, 0.62);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .exp-modal-backdrop.is-open {
+            display: flex;
+        }
+        .exp-modal {
+            background: #fff;
+            border-radius: 28px;
+            padding: 44px 40px;
+            max-width: 560px;
+            width: 100%;
+            box-shadow: 0 32px 64px rgba(18, 29, 23, 0.22);
+            position: relative;
+            display: grid;
+            gap: 16px;
+        }
+        .exp-modal h3 {
+            font-family: "Fraunces", serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0;
+        }
+        .exp-modal p {
+            margin: 0;
+            line-height: 1.75;
+            color: rgba(44, 62, 80, 0.85);
+        }
+        .exp-modal .button,
+        .exp-modal .button-compact {
+            width: auto;
+            display: inline-flex;
+            justify-self: start;
+        }
+        .exp-modal ul,
+        .exp-modal ol {
+            margin: 0;
+            padding-left: 20px;
+            display: grid;
+            gap: 6px;
+            color: rgba(44, 62, 80, 0.85);
+            line-height: 1.65;
+            font-size: 0.9rem;
+        }
+        .exp-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: rgba(44, 62, 80, 0.5);
+            line-height: 1;
+        }
+        .exp-modal-close:hover { color: var(--moss); }
+        .exp-modal--rich {
+            max-width: 680px;
+            max-height: 88vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            gap: 0;
+        }
+        .exp-modal-alt {
+            display: block;
+            font-family: "Manrope", sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ochre, #B58B4C);
+            margin-top: 4px;
+        }
+        .exp-modal-section {
+            margin-top: 22px;
+        }
+        .exp-modal-section h4 {
+            font-family: "Fraunces", serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--moss);
+            margin: 0 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(45, 70, 54, 0.12);
         }
     </style>
 </head>
@@ -136,29 +254,17 @@
             </div>
 
             <div class="exp-cards">
-                <div class="exp-card">
-                    <h2>Choquequirao</h2>
-                    <p>Trekking a la ciudadela inca perdida entre cañones, considerada la hermana mayor de Machu Picchu.</p>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/choquequirao.jpg'); background-size: cover; background-position: center bottom; border-color: transparent; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,0.6);">
+                    <h2 style="color: #fff;">Choquequirao</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-choquequirao" data-modal-target="modal-choquequirao" style="border-color: rgba(244,247,246,0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
                 </div>
-                <div class="exp-card">
-                    <h2>Cordillera Huayhuash</h2>
-                    <p>Circuito de alta montaña por una de las cordilleras más bellas del planeta, con lagunas turquesas y cumbres de más de 6.000 msnm.</p>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/Ausangate.jpg'); background-size: cover; background-position: center bottom; border-color: transparent; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,0.6);">
+                    <h2 style="color: #fff;">Ausangate Trek</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ausangate" data-modal-target="modal-ausangate" style="border-color: rgba(244,247,246,0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
                 </div>
-                <div class="exp-card">
-                    <h2>Salkantay Trek</h2>
-                    <p>Ruta alternativa a Machu Picchu cruzando el nevado Salkantay a 4.630 msnm, entre glaciares y selva nublada.</p>
-                </div>
-                <div class="exp-card">
-                    <h2>Ausangate Trek</h2>
-                    <p>Circuito de alta altura alrededor del Apu Ausangate, con aguas termales, llamas y paisajes de puna infinita.</p>
-                </div>
-                <div class="exp-card">
-                    <h2>Salkantay - Machu Picchu</h2>
-                    <p>La combinación perfecta: paso de alta montaña y llegada a la ciudadela inca más famosa del mundo.</p>
-                </div>
-                <div class="exp-card">
-                    <h2>Camino del Inca Clásico</h2>
-                    <p>El trek más icónico de América: cuatro días por caminos de piedra inca hasta la Puerta del Sol en Machu Picchu.</p>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/salkantay.jpg'); background-size: cover; background-position: center bottom; border-color: transparent; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,0.6);">
+                    <h2 style="color: #fff;">Salkantay - Machu Picchu</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-salkantay" data-modal-target="modal-salkantay" style="border-color: rgba(244,247,246,0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
                 </div>
             </div>
 
@@ -189,6 +295,144 @@
 
     <div id="google_translate_element" aria-hidden="true"></div>
     <script src="script.js"></script>
+
+    <div class="exp-modal-backdrop" id="modal-ausangate" role="dialog" aria-modal="true" aria-labelledby="modal-ausangate-title">
+        <div class="exp-modal exp-modal--rich">
+            <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+            <h3 id="modal-ausangate-title">«El Apu del Cusco» <span class="exp-modal-alt">Ausangate Trek</span></h3>
+
+            <section class="exp-modal-section">
+                <p>El trekking al Ausangate es una de las travesías de montaña más impactantes de Perú y una experiencia única para quienes buscan recorrer paisajes remotos de la cordillera andina. Alrededor del imponente Nevado Ausangate (6372 msnm), montaña sagrada de gran importancia para las culturas andinas, el recorrido atraviesa lagunas turquesas, pasos de altura, glaciares y pequeñas comunidades que aún conservan tradiciones ancestrales.</p>
+                <p>Durante la expedición se recorren extensos valles de altura rodeados por enormes montañas nevadas, con la posibilidad de disfrutar de aguas termales naturales y de conocer de cerca la vida de los pobladores andinos. Una travesía intensa y auténtica, ideal para amantes del trekking y la alta montaña que buscan vivir la inmensidad de los Andes peruanos en estado puro.</p>
+            </section>
+
+            <section class="exp-modal-section">
+                <h4>Temporada</h4>
+                <p>Abril a Octubre.</p>
+            </section>
+
+            <section class="exp-modal-section">
+                <h4>Itinerario</h4>
+                <ol class="exp-modal-itinerary">
+                    <li><strong>Día 1:</strong> Salida desde Cusco hacia Ocongate y la comunidad andina de Upis, inicio de la caminata al pie del majestuoso Ausangate. Trekking de aclimatación hasta la laguna Huayna Ausangate y campamento frente al glaciar.</li>
+                    <li><strong>Día 2:</strong> Ascenso al abra Arapa rodeados de montañas nevadas y lagunas cristalinas. Caminata entre rebaños de alpacas y paisajes de alta montaña hasta Hatun Pucacocha, donde se realiza el segundo campamento.</li>
+                    <li><strong>Día 3:</strong> Jornada más desafiante del recorrido atravesando el abra Palomani, el punto más alto de la ruta a más de 5200 msnm. Encuentro con comunidades andinas tradicionales y conexión profunda con la cultura y la naturaleza de los Andes.</li>
+                    <li><strong>Día 4:</strong> Caminata hacia el abra Jampa y recorrido por el circuito de las Siete Lagunas, rodeadas de glaciares y montañas sagradas. Posibilidad de realizar una ceremonia de agradecimiento a la Pachamama y disfrutar de las aguas termales de Pacchanta.</li>
+                    <li><strong>Día 5:</strong> Última caminata hasta la comunidad de Tinke, visitando familias andinas y conociendo sus tradiciones ancestrales antes del regreso final a Cusco.</li>
+                    <li><strong>Día 6:</strong> Día extra.</li>
+                </ol>
+            </section>
+
+            <a class="button button-primary button-compact" href="index.html#contacto">Consultar disponibilidad</a>
+        </div>
+    </div>
+
+    <div class="exp-modal-backdrop" id="modal-choquequirao" role="dialog" aria-modal="true" aria-labelledby="modal-choquequirao-title">
+        <div class="exp-modal exp-modal--rich">
+            <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+            <h3 id="modal-choquequirao-title">«La hermana sagrada del Machupicchu» <span class="exp-modal-alt">Choquequirao</span></h3>
+
+            <section class="exp-modal-section">
+                <p>Una travesía hacia la ciudad oculta en la montaña. Todo incluído, lejos de las grandes multitudes, rumbo a uno de los últimos refugios preamericanos. Atravesando las profundidades del cañón del Apurímac para llegar a Choquequirao, recorreremos antiguos senderos incas entre quebradas, bosque montano y pobladores andinos.</p>
+                <p>Seis jornadas de inmersión en los caminos del Tawantinsuyu: ascensos demandantes, campamentos bajo las estrellas en contacto con las comunidades y el encuentro con una de las aldeas de altura más enigmáticas de la sociedad Andina ancestral. Propuesta única opcional: 2 días y medio en la ciudadela.</p>
+            </section>
+
+            <section class="exp-modal-section">
+                <h4>Temporada</h4>
+                <p>Abril a Octubre.</p>
+            </section>
+
+            <section class="exp-modal-section">
+                <h4>Itinerario</h4>
+                <ol class="exp-modal-itinerary">
+                    <li><strong>Día 1:</strong> Salida desde Cusco y traslado hacia Cachora y Capuliyoc, punto de inicio del trekking. Descenso hacia el cañón del Apurímac atravesando paisajes andinos con vistas a los nevados Salkantay y Humantay. Llegada a Chiquisca (1900 msnm). Noche en hospedaje familiar o campamento.</li>
+                    <li><strong>Día 2:</strong> Descenso hacia Playa Rosalinas (1500 msnm), el punto más bajo del recorrido, y posterior cruce del río Apurímac. Ascenso exigente pasando por Santa Rosa hasta alcanzar Marampata (2900 msnm), con vistas panorámicas del cañón y las montañas circundantes. Noche en hospedaje local o campamento.</li>
+                    <li><strong>Día 3:</strong> Caminata hacia el complejo arqueológico de Choquequirao (3050 msnm). Recorrido guiado por distintos sectores de la antigua ciudad inca, descubriendo terrazas, plazas y construcciones rodeadas por la inmensidad de la montaña. Noche en campamento o refugio de montaña cercano al complejo.</li>
+                    <li><strong>Día 4:</strong> Jornada completa dedicada a continuar explorando Choquequirao y sus distintos rincones arqueológicos. Tiempo libre para contemplación, descanso y conexión con uno de los sitios más enigmáticos del mundo andino. Noche en campamento o refugio.</li>
+                    <li><strong>Día 5:</strong> Inicio del regreso descendiendo nuevamente hacia Santa Rosa y Playa Rosalinas, cruzando el río Apurímac antes de realizar la subida final hasta Chiquisca. Jornada físicamente exigente entre senderos de montaña y grandes desniveles. Noche en hospedaje familiar o campamento.</li>
+                    <li><strong>Día 6:</strong> Ascenso final hacia Capuliyoc y traslado hacia el Monolito de Saywite, antiguo centro ceremonial andino esculpido en piedra. Visita posterior a las aguas termales de Conoc para relajarse antes del regreso hacia Cusco. Fin de la expedición.</li>
+                </ol>
+            </section>
+
+            <a class="button button-primary button-compact" href="index.html#contacto" style="width: auto; display: inline-flex;">Consultar disponibilidad</a>
+        </div>
+    </div>
+
+    <div class="exp-modal-backdrop" id="modal-salkantay" role="dialog" aria-modal="true" aria-labelledby="modal-salkantay-title">
+        <div class="exp-modal exp-modal--rich">
+            <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+            <h3 id="modal-salkantay-title">«De la montaña salvaje al corazón del Tawantinsuyu» <span class="exp-modal-alt">Salkantay - Machu Picchu</span></h3>
+
+            <section class="exp-modal-section">
+                <p>El camino de la «Montaña Salvaje» a Machupicchu combina aventura, naturaleza y cultura en un recorrido que atraviesa paisajes imponentes y ecosistemas cambiantes. Pasaremos por la mágica Laguna Humantay, bajo la mirada del majestuoso nevado Salkantay, para luego descender desde las altas montañas hacia el bosque nuboso y los límites de la selva peruana. Cada jornada revela escenarios únicos: glaciares, valles profundos, ríos cristalinos y senderos ancestrales rodeados de una naturaleza inmensa.</p>
+                <p>Al final de cada día, podrás descansar en alojamientos confortables y disfrutar de una excelente gastronomía andina en medio de las montañas. Acompañado por guías profesionales, disfrutaremos de la energía de esta ruta legendaria que culmina en una de las maravillas del mundo.</p>
+            </section>
+
+            <section class="exp-modal-section">
+                <h4>Temporada</h4>
+                <p>Abril a Octubre.</p>
+            </section>
+
+            <section class="exp-modal-section">
+                <h4>Itinerario</h4>
+                <ol class="exp-modal-itinerary">
+                    <li><strong>Día 1:</strong> Salida desde Cusco hacia Mollepata y Soraypampa. Caminata de aclimatación hasta la impresionante Laguna Humantay, rodeada de glaciares y montañas andinas. Campamento en Soraypampa.</li>
+                    <li><strong>Día 2:</strong> Jornada más exigente del trekking atravesando los nevados Humantay y Salkantay hasta alcanzar el abra Salkantay a más de 4600 msnm. Descenso hacia el bosque nuboso y campamento en Collpapampa.</li>
+                    <li><strong>Día 3:</strong> Descenso progresivo desde los Andes hacia la selva alta peruana, atravesando paisajes tropicales con gran diversidad de flora y fauna hasta llegar a Lucmabamba. Posibilidad opcional de disfrutar de aguas termales.</li>
+                    <li><strong>Día 4:</strong> Caminata hacia las ruinas incas de Llactapata, desde donde se obtiene una vista única de Machu Picchu. Continuación por Hidroeléctrica y las vías del tren hasta Aguas Calientes, puerta de entrada a Machu Picchu.</li>
+                    <li><strong>Día 5:</strong> Ascenso temprano desde Aguas Calientes hacia Machu Picchu para realizar la visita guiada por el Circuito Clásico, recorriendo los principales templos, terrazas y construcciones de la ciudadela inca. Tarde libre y noche en hospedaje.</li>
+                    <li><strong>Día 6:</strong> Caminata desde Aguas Calientes hasta Santa Teresa atravesando paisajes de selva alta, seguida del traslado privado de regreso a Cusco. Fin de la expedición.</li>
+                    <li><strong>Día 7:</strong> Día extra.</li>
+                </ol>
+            </section>
+
+            <a class="button button-primary button-compact" href="index.html#contacto">Consultar disponibilidad</a>
+        </div>
+    </div>
+
+    <script>
+        const modalTriggers = Array.from(document.querySelectorAll('[data-modal-target]'));
+
+        modalTriggers.forEach((trigger) => {
+            const modalId = trigger.getAttribute('data-modal-target');
+            const modal = modalId ? document.getElementById(modalId) : null;
+
+            if (!modal) {
+                return;
+            }
+
+            const closeBtn = modal.querySelector('.exp-modal-close');
+
+            const openModal = () => {
+                modal.classList.add('is-open');
+                closeBtn?.focus();
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+                trigger.focus();
+            };
+
+            trigger.addEventListener('click', openModal);
+
+            closeBtn?.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
