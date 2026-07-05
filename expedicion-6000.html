@@ -162,6 +162,21 @@
             background: var(--moss);
             color: #fff;
         }
+        .exp-card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .exp-card-btn-secondary {
+            background: rgba(244, 247, 246, 0.16);
+            border-color: rgba(244, 247, 246, 0.92);
+            color: #f4f7f6;
+        }
+        .exp-card-btn-secondary:hover {
+            background: rgba(244, 247, 246, 0.96);
+            color: #1f3126;
+        }
 
         /* Modal */
         .exp-modal-backdrop {
@@ -337,19 +352,39 @@
             <div class="exp-cards">
                 <div class="exp-card exp-card-san-francisco">
                     <h2>Volcán San Francisco</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-san-francisco">Ver más info</button>
+                    <div class="exp-card-actions">
+                        <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-san-francisco" data-modal-target="modal-san-francisco">Ver más info</button>
+                    </div>
                 </div>
                 <div class="exp-card exp-card-el-plata" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/cerroelplata.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
                     <h2>Cerro El Plata</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-el-plata">Ver más info</button>
+                    <div class="exp-card-actions">
+                        <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-el-plata" data-modal-target="modal-el-plata">Ver más info</button>
+                    </div>
                 </div>
                 <div class="exp-card exp-card-ojos" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/ojosdelsalado.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
-                    <h2>Volcán Ojos del Sosneado</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ojos">Ver más info</button>
+                    <h2>Volcán Ojos del Salado</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ojos" data-modal-target="modal-ojos">Ver más info</button>
                 </div>
                 <div class="exp-card exp-card-aconcagua" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/aconcagua.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
                     <h2>Aconcagua</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-aconcagua">Ver más info</button>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-aconcagua" data-modal-target="modal-aconcagua">Ver más info</button>
+                </div>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/llullaillaco.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Volcán Llullaillaco</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-llullaillaco" data-modal-target="modal-llullaillaco" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                </div>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/lagunablanca.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Nevado Laguna Blanca</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-laguna-blanca" data-modal-target="modal-laguna-blanca" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                </div>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/incahuasi.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Volcán Incahuasi</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-incahuasi" data-modal-target="modal-incahuasi" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                </div>
+                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/famatina.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Nevado de Famatina</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-famatina" data-modal-target="modal-famatina" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
                 </div>
             </div>
 
@@ -363,52 +398,346 @@
             <div class="exp-modal exp-modal--rich">
                 <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
 
-                <h3 id="modal-sf-title">Expedición Volcán San Francisco <span class="exp-modal-alt">6016 msnm</span></h3>
+                <h3 id="modal-sf-title">Tu primer seismil <span class="exp-modal-alt">Volcán San Francisco · 6016 msnm</span></h3>
 
                 <div class="exp-modal-badges">
                     <span class="exp-badge">8 días</span>
                     <span class="exp-badge">6016 msnm</span>
-                    <span class="exp-badge">Dificultad moderada</span>
+                    <span class="exp-badge">Alta montaña</span>
                 </div>
 
                 <section class="exp-modal-section">
                     <h4>Sobre la expedición</h4>
-                    <p>Ubicada en la mítica Ruta de los Seismiles en Catamarca, esta expedición se adentra en un territorio de volcanes gigantes, salares y lagunas de altura. Desde la localidad de Fiambalá, ascendemos por la Ruta Nacional 60 hacia el imponente Volcán San Francisco, atravesando paisajes ancestrales que narran la historia geológica de los Andes.</p>
+                    <p>El Volcán San Francisco es uno de los seismiles más accesibles y espectaculares de la cordillera de los Andes, ubicado sobre la frontera entre Argentina y Chile. Con sus 6016 msnm, ofrece una experiencia ideal para iniciarse a la alta montaña, rodeado de volcanes gigantes, lagunas altiplánicas y los paisajes únicos del Valle de los Seismiles.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Noviembre a Abril.</p>
                 </section>
 
                 <section class="exp-modal-section">
                     <h4>Itinerario</h4>
                     <ol class="exp-modal-itinerary">
-                        <li><strong>Día 1</strong> — Encuentro en Fiambalá (15:00 hs), trámites policiales y charla técnica. Traslado al refugio Pastos Largos (3200 msnm).</li>
-                        <li><strong>Día 2</strong> — Trekking de aclimatación al cerro Coquena o Pastos Largos (4100 msnm) y regreso al refugio.</li>
-                        <li><strong>Día 3</strong> — Traslado al refugio Las Grutas (4000 msnm), trámites de aduana y armado de campamento.</li>
-                        <li><strong>Día 4</strong> — Ascenso al cerro Falso Morocho (4500 msnm) con vistas panorámicas al Volcán Incahuasi.</li>
-                        <li><strong>Día 5</strong> — Ascenso al Volcán Bertrand (5300 msnm) para apreciar su cráter de 4 km de circunferencia.</li>
-                        <li><strong>Día 6</strong> — Jornada de descanso y aclimatación en Refugio Las Grutas.</li>
-                        <li><strong>Día 7</strong> — <strong>Día de Cumbre.</strong> Ascenso al Volcán San Francisco (6016 msnm). Jornada de aproximadamente 14 horas.</li>
-                        <li><strong>Día 8</strong> — Descenso, regreso a Fiambalá y fin de los servicios.</li>
+                        <li><strong>Día 1</strong> — Encuentro en Fiambalá, realización de trámites obligatorios y charla técnica de expedición. Traslado al refugio Pastos Largos, ubicado a 3200 msnm.</li>
+                        <li><strong>Día 2</strong> — Caminata de aclimatación al cerro Coquena o Pastos Largos, alcanzando los 4100 msnm y regresando luego al refugio.</li>
+                        <li><strong>Día 3</strong> — Traslado hacia el refugio Las Grutas, a 4000 msnm, realización de trámites fronterizos y preparación del campamento de altura.</li>
+                        <li><strong>Día 4</strong> — Ascenso al cerro Falso Morocho, excelente mirador natural con amplias vistas al Volcán Incahuasi y al Valle de los Seismiles.</li>
+                        <li><strong>Día 5</strong> — Ascenso al Volcán Bertrand, superando los 5300 msnm y contemplando su enorme cráter volcánico de más de 4 kilómetros de circunferencia.</li>
+                        <li><strong>Día 6</strong> — Jornada de descanso y aclimatación en el refugio Las Grutas, preparando el cuerpo para el intento de cumbre.</li>
+                        <li><strong>Día 7</strong> — Intento de cumbre al Volcán San Francisco, alcanzando los 6016 msnm en una extensa jornada de alta montaña rodeada de los gigantes andinos del Valle de los Seismiles.</li>
+                        <li><strong>Día 8</strong> — Regreso a Fiambalá. Fin de la expedición.</li>
                     </ol>
                 </section>
 
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-el-plata" role="dialog" aria-modal="true" aria-labelledby="modal-el-plata-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-el-plata-title">Guardián del Cordón del Plata <span class="exp-modal-alt">Cerro El Plata · 5968 msnm aprox.</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">7 días</span>
+                    <span class="exp-badge">5968 msnm aprox.</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
                 <section class="exp-modal-section">
-                    <h4>¿Qué incluye?</h4>
-                    <ul>
-                        <li><strong>Traslados:</strong> Transfer in/out desde Fiambalá hacia la cordillera.</li>
-                        <li><strong>Alojamiento:</strong> Refugios de montaña (Pastos Largos y Las Grutas) y carpas de alta montaña si es necesario.</li>
-                        <li><strong>Alimentación:</strong> Pensión completa en la montaña (tarde del día 1 hasta desayuno del día 8).</li>
-                        <li><strong>Seguridad:</strong> Guías certificados, seguro de accidentes, botiquín y comunicación por radio UHF/VHF.</li>
-                        <li><strong>Logística:</strong> Equipo general de cocina, reuniones previas y asistencia permanente.</li>
-                    </ul>
+                    <h4>Sobre la expedición</h4>
+                    <p>El Cerro El Plata, con sus más de 5900 metros de altura, es una de las montañas más emblemáticas de la Cordillera Frontal mendocina y el gran guardián del Cordón del Plata. Por muchos años se pensó que superaba los 6000 msnm, y aunque hoy sabemos que no es así, por su proximidad a dicha altura es considerado un seismil. Rodeado de glaciares, filos de altura y extensos paisajes andinos, representa una de las experiencias clásicas de alta montaña en Argentina.</p>
+                    <p style="margin-top: 10px;">Esta expedición propone una progresión gradual de aclimatación y campamentos de altura, transitando vegas, quebradas y terrenos glaciarios hasta alcanzar alguno de los grandes objetivos del cordón. Una experiencia intensa y desafiante, destinada a montañistas con buena preparación física y experiencia previa en montaña.</p>
                 </section>
 
                 <section class="exp-modal-section">
-                    <h4>Equipo necesario</h4>
-                    <ul>
-                        <li><strong>Vestimenta (sistema de capas):</strong> Pantalón de trekking, impermeable y térmica. Remera manga larga, buzo polar o windstopper. Campera de duvet e impermeable. Guantes finos, de abrigo impermeables y mitones de duvet.</li>
-                        <li><strong>Calzado:</strong> Botas dobles/rígidas para cumbre, botas de trekking para aproximación. Medias de alta montaña, finas y de trekking.</li>
-                        <li><strong>Equipo técnico y camping:</strong> Mochila 40/50 L, bastones, bolsa de dormir (confort −10 °C), colchoneta, casco y linterna frontal con pilas extra. Lentes categoría 4 o antiparras.</li>
-                        <li><strong>Varios:</strong> Protector solar FPS 60+, labial, mínimo 3 L de agua, vajilla irrompible, kit de aseo y bolsas para residuos.</li>
-                    </ul>
+                    <h4>Temporada</h4>
+                    <p>Noviembre a Abril.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Encuentro en Mendoza y traslado hacia Vallecitos (2850 msnm). Caminata de porteo y aproximación hasta el campamento de Las Veguitas (3200 msnm), atravesando vegas y senderos de montaña. Cena y noche en refugio.</li>
+                        <li><strong>Día 2</strong> — Traslado de campamento a la zona de Las Veguitas. Caminatas suaves por los alrededores para favorecer la adaptación a la altura, hidratación y descanso. Noche en campamento.</li>
+                        <li><strong>Día 3</strong> — Porteo de equipo hacia el campamento de El Salto del Agua (4200 msnm). Regreso posterior a Las Veguitas para continuar con el proceso de aclimatación. Según condiciones del grupo y estrategia de los guías, posibilidad de permanecer en altura.</li>
+                        <li><strong>Día 4</strong> — Ascenso definitivo al campamento de El Salto del Agua (4200 msnm), ubicado en plena alta montaña. Armado del campamento, hidratación y descanso.</li>
+                        <li><strong>Día 5</strong> — Día de aclimatación en altura. Caminatas cortas por la zona, preparación del equipo y descanso previo al intento de cumbre. Noche en campamento.</li>
+                        <li><strong>Día 6</strong> — Intento de cumbre al Cerro El Plata (5968 msnm aprox.) o al Cerro Vallecitos, según condiciones climáticas y estado del grupo. Salida durante la madrugada y jornada exigente de alta montaña. Regreso al campamento El Salto del Agua.</li>
+                        <li><strong>Día 7</strong> — Descenso hacia Vallecitos y traslado de regreso a Mendoza. Fin de la expedición.</li>
+                    </ol>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-ojos" role="dialog" aria-modal="true" aria-labelledby="modal-ojos-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-ojos-title">El volcán más alto del mundo <span class="exp-modal-alt">Nevado Ojos del Salado · 6892 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">14 días</span>
+                    <span class="exp-badge">6892 msnm</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>Segunda montaña más alta de América, y el volcán activo más elevado del mundo. Esta imponente montaña de origen volcánico se encuentra en la cordillera de los Andes, sobre la frontera entre Argentina y Chile. La expedición se desarrolla por la ruta chilena, iniciando el recorrido desde territorio argentino y atravesando algunos de los paisajes de altura más extremos y espectaculares del planeta.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Diciembre a Marzo.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Encuentro en Fiambalá, presentación de la expedición. Traslado a refugios de altura en la zona de Chaschuil para iniciar la adaptación. Descanso y adaptación inicial a la altura.</li>
+                        <li><strong>Día 2</strong> — Ascenso al cerro Coquena o Pastos Largos, alcanzando los 4050 msnm, con amplias vistas del Valle de los Seismiles y los grandes volcanes andinos.</li>
+                        <li><strong>Día 3</strong> — Traslado hacia los refugios de altura Las Lozas o Las Peladas, atravesando paisajes de puna y la zona de la Laguna San Francisco, con observación de fauna andina y vistas al Volcán Incahuasi. Posibilidad de disfrutar de aguas termales naturales en altura.</li>
+                        <li><strong>Día 4</strong> — Ascenso al cerro Falso Morocho, excelente jornada de adaptación con vistas al Valle de los Seismiles y a los grandes volcanes de la región. Noche en campamento de altura.</li>
+                        <li><strong>Día 5</strong> — Ascenso al cerro Cordobita, superando los 5500 msnm, como parte del proceso de aclimatación previo al intento de cumbre principal.</li>
+                        <li><strong>Día 6</strong> — Cruce hacia Chile realizando trámites fronterizos y traslado hasta Laguna Verde, rodeada de volcanes y paisajes de alta montaña.</li>
+                        <li><strong>Día 7</strong> — Ascenso en vehículo hasta el Refugio Atacama, ubicado a 5300 msnm, donde continúa la aclimatación en altura extrema.</li>
+                        <li><strong>Día 8</strong> — Porteo de equipo hacia el campamento Tejos y regreso al Refugio Atacama para descanso y preparación.</li>
+                        <li><strong>Día 9</strong> — Ascenso al Campamento Tejos, armado de campamento y descanso previo al día de cumbre.</li>
+                        <li><strong>Día 10</strong> — Intento de cumbre al Nevado Ojos del Salado, el volcán activo más alto del mundo, alcanzando los 6892 msnm. Luego del ascenso, descenso al campamento de altura.</li>
+                        <li><strong>Día 11</strong> — Descenso y regreso en transporte privado hacia Fiambalá. Fin de la expedición.</li>
+                        <li><strong>Día 12/13/14</strong> — Días extras reservados para contingencias climáticas o adaptación adicional según decisión del guía.</li>
+                    </ol>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-llullaillaco" role="dialog" aria-modal="true" aria-labelledby="modal-llullaillaco-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-llullaillaco-title">El volcán adorado <span class="exp-modal-alt">Volcán Llullaillaco · 6739 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">15 días</span>
+                    <span class="exp-badge">6739 msnm</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>El Volcán Llullaillaco es la séptima montaña más alta de América y uno de los volcanes más elevados del planeta, considerado el adoratorio de altura más alto del mundo. La expedición se desarrolla por la ruta noreste, conocida como la Ruta Arqueológica, un histórico itinerario andino utilizado antiguamente por los incas.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Diciembre a Marzo.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Recepción en Salta y traslado hacia San Antonio de los Cobres, ubicado a 3700 msnm. Noche en hostería de montaña.</li>
+                        <li><strong>Día 2</strong> — Caminata de aclimatación con ascenso al cerro Pompeya, alcanzando los 4000 msnm y adaptando el cuerpo a la altura.</li>
+                        <li><strong>Día 3</strong> — Traslado hasta el campamento base del Volcán Tuzgle, a 4500 msnm. Jornada de descanso y adaptación.</li>
+                        <li><strong>Día 4</strong> — Día de aclimatación con trekking suave en altura o tiempo libre para disfrutar de las termas naturales del Tuzgle.</li>
+                        <li><strong>Día 5</strong> — Ascenso al volcán Tuzgle, superando los 5550 msnm, y regreso a San Antonio de los Cobres para descanso y reaprovisionamiento.</li>
+                        <li><strong>Día 6</strong> — Traslado hacia Tolar Grande o Pocitos, según disponibilidad de alojamiento. Noche en hospedaje local.</li>
+                        <li><strong>Día 7</strong> — Viaje hacia el campamento base del Volcán Llullaillaco, ubicado a 4900 msnm.</li>
+                        <li><strong>Día 8</strong> — Porteo de equipo hasta el campamento 1 a 5800 msnm y regreso al campamento base para continuar la aclimatación.</li>
+                        <li><strong>Día 9</strong> — Jornada de descanso y adaptación en el campamento base.</li>
+                        <li><strong>Día 10</strong> — Ascenso al campamento 2, situado a 5880 msnm, preparando el ataque final a la cumbre.</li>
+                        <li><strong>Día 11</strong> — Intento de cumbre al volcán Llullaillaco, una de las montañas más altas y remotas de los Andes.</li>
+                        <li><strong>Día 12</strong> — Descenso al campamento base y traslado de regreso hacia Tolar Grande.</li>
+                        <li><strong>Día 13</strong> — Retorno a Salta y finalización de la expedición.</li>
+                        <li><strong>Día 14 y 15</strong> — Días extra reservados para contingencias climáticas o ajustes logísticos durante la expedición.</li>
+                    </ol>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-incahuasi" role="dialog" aria-modal="true" aria-labelledby="modal-incahuasi-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-incahuasi-title">La casa del Inca <span class="exp-modal-alt">Volcán Incahuasi · 6640 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">14 días</span>
+                    <span class="exp-badge">6640 msnm</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>Uno de los volcanes más imponentes de la cordillera de los Andes, con una altitud de 6638 msnm, ubicado sobre la frontera entre Argentina y Chile. Su nombre, de origen quechua, significa “Casa del Inca”, reflejando la profunda conexión histórica y cultural de esta montaña con las antiguas civilizaciones andinas.</p>
+                    <p style="margin-top: 10px;">La expedición transcurre a través del espectacular Valle de los Seismiles, rodeado de volcanes gigantes, lagunas de altura y extensos paisajes desérticos de montaña. El ascenso combina exigencia física, altura extrema y una experiencia única en uno de los entornos más remotos y majestuosos de Sudamérica.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Diciembre a Marzo.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Encuentro en Fiambalá, realización de registros obligatorios y comienzo de la expedición. Traslado a refugios de altura en la zona de Chaschuil para iniciar la adaptación.</li>
+                        <li><strong>Día 2</strong> — Ascenso al cerro Coquena o Pastos Largos, alcanzando los 4050 msnm, con amplias vistas del Valle de los Seismiles y los grandes volcanes andinos.</li>
+                        <li><strong>Día 3</strong> — Traslado hacia el refugio La Gruta, ubicado a más de 4000 msnm, y tarde libre destinada a descanso y aclimatación.</li>
+                        <li><strong>Día 4</strong> — Caminata de aclimatación al cerro Falso Morocho, excelente mirador natural hacia volcanes como Volcán Incahuasi, San Francisco y Morocho. Regreso al refugio.</li>
+                        <li><strong>Día 5</strong> — Ascenso al campamento 1 Volcancitos porteando agua y alimentos, alcanzando los 5100 msnm y recorriendo paisajes volcánicos únicos junto a enormes cráteres de altura. Tras el descenso, regreso a Las Grutas.</li>
+                        <li><strong>Día 6</strong> — Jornada de descanso y adaptación en altura, preparación física y logística para las próximas etapas de montaña.</li>
+                        <li><strong>Día 7</strong> — Intento de cumbre al Volcán San Francisco, comenzando desde los 4700 msnm y atravesando escenarios de alta montaña del Valle de los Seismiles.</li>
+                        <li><strong>Día 8</strong> — Día de recuperación y aclimatación adicional en campamento o refugio de altura, según condiciones y planificación del guía.</li>
+                        <li><strong>Día 9</strong> — Traslado en vehículo hasta los 4600 msnm e inicio del ascenso al campamento 1, a 5100 msnm.</li>
+                        <li><strong>Día 10</strong> — Porteo y ascenso desde el campamento 1 hasta el campamento 2, ubicado a 5750 msnm, continuando la adaptación.</li>
+                        <li><strong>Día 11</strong> — Día de descanso y adaptación en campo 2, para el intento final.</li>
+                        <li><strong>Día 12</strong> — Día de cumbre al majestuoso Volcán Incahuasi, una de las montañas más emblemáticas de la cordillera andina.</li>
+                        <li><strong>Día 13</strong> — Descenso desde el campamento de altura y regreso final a Fiambalá. Fin de la expedición.</li>
+                        <li><strong>Día 14</strong> — Día extra reservado para contingencias climáticas o ajustes logísticos.</li>
+                    </ol>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-famatina" role="dialog" aria-modal="true" aria-labelledby="modal-famatina-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-famatina-title">El techo de La Rioja <span class="exp-modal-alt">Cerro General Belgrano · 6120 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">8 días</span>
+                    <span class="exp-badge">6120 msnm</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>El Cerro General Belgrano (Nevado de Famatina), conocido también como Nevado de Famatina, es la montaña más alta de la provincia de La Rioja, alcanzando los 6120 msnm. Forma parte de la imponente Sierra de Famatina y se destaca por sus paisajes áridos de altura, antiguas huellas mineras y extensos valles andinos.</p>
+                    <p style="margin-top: 10px;">La expedición combina jornadas de aclimatación, trekking de montaña y ascensos progresivos hasta alcanzar la cumbre, atravesando refugios históricos, caminos mineros y escenarios remotos de la cordillera riojana. Es una experiencia ideal para quienes buscan aventura, altura y conexión con uno de los macizos más emblemáticos del noroeste argentino.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Noviembre a Abril.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Encuentro en Famatina, ubicada a 1640 msnm, preparación inicial y organización de la expedición.</li>
+                        <li><strong>Día 2</strong> — Traslado en vehículos 4x4 hasta el refugio Cueva de Pérez, a 3900 msnm, atravesando caminos de alta montaña. Tarde libre destinada a descanso y aclimatación.</li>
+                        <li><strong>Día 3</strong> — Jornada de aclimatación con caminatas suaves en altura y tiempo de descanso en el refugio.</li>
+                        <li><strong>Día 4</strong> — Trekking hacia la histórica estación minera La Mejicana, ubicada a 4200 msnm, recorriendo antiguos caminos de montaña y paisajes de la cordillera riojana. Regreso y pernocte en Cueva de Pérez.</li>
+                        <li><strong>Día 5</strong> — Ascenso al cerro Viuda Negra, alcanzando los 4550 msnm como parte del proceso de adaptación física antes del intento de cumbre. Regreso al refugio.</li>
+                        <li><strong>Día 6</strong> — Día libre de recuperación y preparación técnica para el ascenso final, con descanso en altura.</li>
+                        <li><strong>Día 7</strong> — Traslado hasta Ampallao, base del Cerro General Belgrano (Nevado de Famatina), e inicio del intento de cumbre a 6120 msnm. Luego del ascenso, descenso y regreso a Famatina para finalizar la expedición.</li>
+                        <li><strong>Día 8</strong> — Día extra reservado para contingencias climáticas o ajustes logísticos.</li>
+                    </ol>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-laguna-blanca" role="dialog" aria-modal="true" aria-labelledby="modal-laguna-blanca-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-laguna-blanca-title">El seismil más bajo <span class="exp-modal-alt">Nevado Laguna Blanca · 6012 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">8 días</span>
+                    <span class="exp-badge">6012 msnm</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>El Nevado Laguna Blanca se eleva dentro de la Reserva Provincial y comunidad ancestral de Laguna Blanca, uno de los paisajes más auténticos y singulares de la provincia de Catamarca. Esta región combina cultura andina viva, extensas lagunas de altura y escenarios naturales únicos en plena puna argentina.</p>
+                    <p style="margin-top: 10px;">Considerado el “seismil” más accesible de la cordillera argentina, el Nevado Laguna Blanca ofrece una experiencia ideal de alta montaña, rodeada de volcanes, vegas andinas y comunidades ancestrales que conservan sus tradiciones en uno de los entornos más remotos y fascinantes del noroeste argentino.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Noviembre a Abril.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Encuentro en Belén y traslado hacia la comunidad andina de Laguna Blanca, ubicada a 3300 msnm. Inicio de la expedición y adaptación inicial a la altura.</li>
+                        <li><strong>Día 2</strong> — Jornada de aclimatación con caminatas suaves y recorridos por la comunidad de Laguna Blanca, conociendo la cultura local y los paisajes de puna catamarqueña.</li>
+                        <li><strong>Día 3</strong> — Trekking de ascenso hacia el campamento Corral Negro, atravesando amplios valles de altura y terrenos de montaña. Noche en campamento a 3900 msnm.</li>
+                        <li><strong>Día 4</strong> — Día libre destinado a descanso, aclimatación y preparación técnica para las etapas de mayor exigencia.</li>
+                        <li><strong>Día 5</strong> — Ascenso al campamento Las Mesadas, ubicado a 4800 msnm, continuando el proceso de adaptación en altura.</li>
+                        <li><strong>Día 6</strong> — Intento de cumbre al Nevado Laguna Blanca, alcanzando los 6018 msnm y disfrutando de vistas panorámicas de la puna y la cordillera andina. Descenso al campamento Las Mesadas.</li>
+                        <li><strong>Día 7</strong> — Descenso final hacia la comunidad de Laguna Blanca y traslado de regreso a Belén. Fin de la expedición.</li>
+                        <li><strong>Día 8</strong> — Día extra.</li>
+                    </ol>
+                </section>
+
+                <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="exp-modal-backdrop" id="modal-aconcagua" role="dialog" aria-modal="true" aria-labelledby="modal-aconcagua-title">
+            <div class="exp-modal exp-modal--rich">
+                <button class="exp-modal-close" type="button" aria-label="Cerrar">&times;</button>
+
+                <h3 id="modal-aconcagua-title">El techo de América <span class="exp-modal-alt">Aconcagua · 6962 msnm</span></h3>
+
+                <div class="exp-modal-badges">
+                    <span class="exp-badge">18 días</span>
+                    <span class="exp-badge">6962 msnm</span>
+                    <span class="exp-badge">Alta montaña</span>
+                </div>
+
+                <section class="exp-modal-section">
+                    <h4>Sobre la expedición</h4>
+                    <p>El Aconcagua es la montaña más alta de América y la cumbre máxima del hemisferio occidental, con 6962 msnm. Forma parte del prestigioso desafío de las “Seven Summits”, que reúne a las montañas más altas de cada continente y representa uno de los mayores objetivos del montañismo mundial. Ubicado en plena cordillera de los Andes, dentro del Parque Provincial Aconcagua, es uno de los desafíos de alta montaña más emblemáticos del mundo.</p>
+                    <p style="margin-top: 10px;">Su ascenso atraviesa valles de altura, glaciares, campamentos históricos y escenarios extremos de montaña, ofreciendo una experiencia única de aventura, resistencia y conexión con la inmensidad de los Andes.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Temporada</h4>
+                    <p>Diciembre a Febrero.</p>
+                </section>
+
+                <section class="exp-modal-section">
+                    <h4>Itinerario</h4>
+                    <ol class="exp-modal-itinerary">
+                        <li><strong>Día 1</strong> — Recepción en Mendoza, preparación del equipo y trámites de permisos. Traslado a Vallecitos y descanso en refugio de montaña.</li>
+                        <li><strong>Día 2</strong> — Caminatas de aclimatación en Vallecitos hacia sectores de altura como Las Veguitas o La Cadenita, con regreso al refugio.</li>
+                        <li><strong>Día 3</strong> — Ascenso y traslado del campamento hacia Veguitas Superior, iniciando la etapa de altura.</li>
+                        <li><strong>Día 4</strong> — Jornada de aclimatación con ascenso a cerros cercanos o porteo hacia El Salto para adaptación progresiva.</li>
+                        <li><strong>Día 5</strong> — Ascenso al campamento El Salto, ubicado a más de 4200 msnm. Descanso y adaptación.</li>
+                        <li><strong>Día 6</strong> — Día de aclimatación en altura, caminatas suaves y descanso en campamento.</li>
+                        <li><strong>Día 7</strong> — Ascenso al Portezuelo Lomas Amarillas o intento de cumbre al Cerro Vallecitos, con regreso al campamento.</li>
+                        <li><strong>Día 8</strong> — Descenso de Vallecitos y traslado hacia Puente del Inca para descanso, ducha y recuperación.</li>
+                        <li><strong>Día 9</strong> — Ingreso al Parque Provincial Aconcagua y trekking hasta Confluencia. Chequeo médico y pernocte.</li>
+                        <li><strong>Día 10</strong> — Caminata hacia Plaza de Mulas, campo base del Aconcagua.</li>
+                        <li><strong>Día 11</strong> — Día completo de descanso y aclimatación en Plaza de Mulas.</li>
+                        <li><strong>Día 12</strong> — Porteo de equipo hacia Nido de Cóndores y regreso al campo base para continuar la adaptación.</li>
+                        <li><strong>Día 13</strong> — Ascenso definitivo al campamento de altura Nido de Cóndores.</li>
+                        <li><strong>Día 14</strong> — Jornada de descanso en altura o ascenso opcional al campamento Berlín para aclimatación avanzada.</li>
+                        <li><strong>Día 15</strong> — Intento de cumbre al Aconcagua atravesando Independencia y la Canaleta hasta alcanzar los 6962 msnm. Descenso al campamento de altura.</li>
+                        <li><strong>Día 16</strong> — Descenso desde altura hasta Plaza de Mulas para recuperación y descanso.</li>
+                        <li><strong>Día 17</strong> — Trekking final de salida hasta Horcones y regreso en transporte a Mendoza. Fin de la expedición.</li>
+                        <li><strong>Día 18</strong> — Día extra reservado ante posibles demoras por condiciones climáticas o regreso final.</li>
+                    </ol>
                 </section>
 
                 <a class="button button-primary" href="index.html#contacto">Consultar disponibilidad</a>
@@ -438,29 +767,43 @@
     <div id="google_translate_element" aria-hidden="true"></div>
     <script src="script.js"></script>
     <script>
-        const modalSF = document.getElementById('modal-san-francisco');
-        const openBtn = document.querySelector('[aria-controls="modal-san-francisco"]');
-        const closeBtn = modalSF.querySelector('.exp-modal-close');
+        const modalTriggers = Array.from(document.querySelectorAll('[data-modal-target]'));
 
-        openBtn.addEventListener('click', () => {
-            modalSF.classList.add('is-open');
-            closeBtn.focus();
-        });
-        closeBtn.addEventListener('click', () => {
-            modalSF.classList.remove('is-open');
-            openBtn.focus();
-        });
-        modalSF.addEventListener('click', (e) => {
-            if (e.target === modalSF) {
-                modalSF.classList.remove('is-open');
-                openBtn.focus();
+        modalTriggers.forEach((trigger) => {
+            const modalId = trigger.getAttribute('data-modal-target');
+            const modal = modalId ? document.getElementById(modalId) : null;
+
+            if (!modal) {
+                return;
             }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalSF.classList.contains('is-open')) {
-                modalSF.classList.remove('is-open');
-                openBtn.focus();
-            }
+
+            const closeBtn = modal.querySelector('.exp-modal-close');
+
+            const openModal = () => {
+                modal.classList.add('is-open');
+                closeBtn?.focus();
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('is-open');
+                trigger.focus();
+            };
+
+            trigger.addEventListener('click', openModal);
+
+            closeBtn?.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
         });
     </script>
 </body>
