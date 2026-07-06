@@ -985,9 +985,6 @@ main > .section:nth-of-type(even) {
     border-radius: 24px;
 }
 
-.visual-mini-grid .visual-card-alt:last-child {
-}
-
 .stories-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr 0.8fr;
@@ -1396,6 +1393,340 @@ main > .section:nth-of-type(even) {
     gap: 12px;
     margin-top: 24px;
     justify-content: center;
+}
+
+/* ── Expeditions pages ─────────────────────────────────────────────── */
+.exp-main {
+    padding-bottom: 60px;
+}
+
+.exp-hero {
+    width: var(--container);
+    margin: 22px auto 0;
+    min-height: 380px;
+    padding: 52px 56px;
+    display: grid;
+    align-content: end;
+    color: #f4f7f6;
+    border-radius: 44px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: linear-gradient(180deg, rgba(18, 29, 23, 0.18), rgba(18, 29, 23, 0.72)), var(--exp-hero-image);
+    background-size: cover;
+    background-position: center;
+}
+
+.exp-hero h1 {
+    margin: 8px 0 0;
+    font-family: "Fraunces", serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.exp-hero-4000 { --exp-hero-image: url("imagen/4000mts.jpg"); }
+.exp-hero-5000 { --exp-hero-image: url("imagen/Tilcara.jpeg"); }
+.exp-hero-6000 { --exp-hero-image: url("imagen/+6000.jpeg"); }
+.exp-hero-mendoza { --exp-hero-image: url("imagen/mendoza.png"); }
+.exp-hero-peru-bolivia { --exp-hero-image: url("imagen/2.avif"); }
+
+.exp-body {
+    width: var(--container);
+    margin: 20px auto 0;
+    padding: 40px;
+    border-radius: 32px;
+    border: 1px solid rgba(45, 70, 54, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 36px rgba(44, 62, 80, 0.06);
+    display: grid;
+    gap: 20px;
+    color: rgba(44, 62, 80, 0.88);
+}
+
+.exp-list {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.9;
+}
+
+.exp-back {
+    width: fit-content;
+}
+
+.exp-back-wrap {
+    width: var(--container);
+    margin: 28px auto 0;
+}
+
+.exp-cards {
+    width: var(--container);
+    margin: 28px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.exp-card {
+    padding: 32px 28px;
+    border-radius: 24px;
+    border: 1px solid rgba(45, 70, 54, 0.10);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
+    display: grid;
+    gap: 10px;
+}
+
+.exp-card h2 {
+    font-family: "Fraunces", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--moss);
+    margin: 0;
+}
+
+.exp-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(44, 62, 80, 0.80);
+}
+
+.exp-card--image {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(18, 29, 23, 0.35), rgba(18, 29, 23, 0.72)), var(--exp-image);
+    background-size: cover;
+    background-position: center bottom;
+    border-color: var(--exp-card-border, rgba(255, 255, 255, 0.32));
+    color: var(--exp-card-color, #fff);
+    text-shadow: var(--exp-card-shadow, 0 6px 18px rgba(0, 0, 0, 0.6));
+}
+
+.exp-card--image h2,
+.exp-card--image p {
+    color: inherit;
+    text-shadow: inherit;
+}
+
+.exp-card--image .exp-card-btn,
+.exp-card--image .exp-card-btn-secondary {
+    border-color: rgba(244, 247, 246, 0.92);
+    color: #f4f7f6;
+    background: rgba(18, 29, 23, 0.22);
+}
+
+.exp-card--image .exp-card-btn:hover,
+.exp-card--image .exp-card-btn-secondary:hover {
+    background: rgba(244, 247, 246, 0.96);
+    color: #1f3126;
+}
+
+.exp-card--image .exp-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.exp-card--image .exp-card-actions .exp-card-btn {
+    margin-top: 0;
+}
+
+.exp-card--image.exp-card-borderless {
+    --exp-card-border: transparent;
+}
+
+.exp-card-btn {
+    margin-top: auto;
+    width: auto;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1.5px solid var(--moss);
+    background: transparent;
+    color: var(--moss);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    align-self: start;
+    white-space: nowrap;
+    line-height: 1.2;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+}
+
+.exp-card-btn:hover {
+    background: var(--moss);
+    color: #fff;
+}
+
+.exp-card-btn-secondary {
+    background: rgba(244, 247, 246, 0.16);
+    border-color: rgba(244, 247, 246, 0.92);
+    color: #f4f7f6;
+}
+
+.exp-card-vallecitos { --exp-image: url("imagen/vallecitos.jpg"); }
+.exp-card-maipo { --exp-image: url("imagen/maipo.jpg"); }
+.exp-card-beltrand { --exp-image: url("imagen/beltrand.jpg"); }
+.exp-card-elsosneado { --exp-image: url("imagen/elsosneado.jpg"); }
+.exp-card-riscoplateado { --exp-image: url("imagen/riscoplateado.jpg"); }
+.exp-card-san-francisco { --exp-image: url("imagen/volcansanfrancisco.jpg"); }
+.exp-card-el-plata { --exp-image: url("imagen/cerroelplata.jpg"); }
+.exp-card-ojos { --exp-image: url("imagen/ojosdelsalado.jpg"); }
+.exp-card-aconcagua { --exp-image: url("imagen/aconcagua.jpg"); }
+.exp-card-llullaillaco { --exp-image: url("imagen/llullaillaco.jpg"); }
+.exp-card-laguna-blanca { --exp-image: url("imagen/lagunablanca.jpg"); }
+.exp-card-incahuasi { --exp-image: url("imagen/incahuasi.jpg"); }
+.exp-card-famatina { --exp-image: url("imagen/famatina.jpg"); }
+.exp-card-choquequirao { --exp-image: url("imagen/choquequirao.jpg"); }
+.exp-card-ausangate { --exp-image: url("imagen/Ausangate.jpg"); }
+.exp-card-salkantay { --exp-image: url("imagen/salkantay.jpg"); }
+
+.exp-modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 29, 23, 0.62);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.exp-modal-backdrop.is-open {
+    display: flex;
+}
+
+.exp-modal {
+    background: #fff;
+    border-radius: 28px;
+    padding: 44px 40px;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 32px 64px rgba(18, 29, 23, 0.22);
+    position: relative;
+    display: grid;
+    gap: 16px;
+}
+
+.exp-modal h3 {
+    font-family: "Fraunces", serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--moss);
+    margin: 0;
+}
+
+.exp-modal p {
+    margin: 0;
+    line-height: 1.75;
+    color: rgba(44, 62, 80, 0.85);
+}
+
+.exp-modal ul,
+.exp-modal ol {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 6px;
+    color: rgba(44, 62, 80, 0.85);
+    line-height: 1.65;
+    font-size: 0.9rem;
+}
+
+.exp-modal .button,
+.exp-modal .button-compact {
+    width: auto;
+    display: inline-flex;
+    justify-self: start;
+}
+
+.exp-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: rgba(44, 62, 80, 0.5);
+    line-height: 1;
+}
+
+.exp-modal-close:hover {
+    color: var(--moss);
+}
+
+.exp-modal--rich {
+    max-width: 680px;
+    max-height: 88vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    gap: 0;
+}
+
+.exp-modal-alt {
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ochre, #B58B4C);
+    margin-top: 4px;
+}
+
+.exp-modal-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 4px;
+}
+
+.exp-badge {
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(63, 75, 61, 0.12);
+    background: rgba(63, 75, 61, 0.08);
+    color: var(--moss);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.exp-modal-section {
+    margin-top: 22px;
+}
+
+.exp-modal-section h4 {
+    font-family: "Fraunces", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--moss);
+    margin: 0 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(45, 70, 54, 0.12);
+}
+
+.exp-modal-itinerary {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 6px;
+    color: rgba(44, 62, 80, 0.85);
+    line-height: 1.65;
+    font-size: 0.9rem;
+}
+
+.exp-modal-spaced {
+    margin-top: 10px;
 }
 
 /* â”€â”€ WhatsApp FAB â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */

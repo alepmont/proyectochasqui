@@ -9,199 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .exp-hero {
-            width: var(--container);
-            margin: 22px auto 0;
-            min-height: 380px;
-            padding: 52px 56px;
-            display: grid;
-            align-content: end;
-            color: #f4f7f6;
-            border-radius: 44px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background:
-                linear-gradient(180deg, rgba(18, 29, 23, 0.18), rgba(18, 29, 23, 0.72)),
-                url("imagen/2.avif");
-            background-size: cover;
-            background-position: center;
-        }
-        .exp-hero h1 {
-            margin: 8px 0 0;
-            font-family: "Fraunces", serif;
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1;
-        }
-        .exp-body {
-            width: var(--container);
-            margin: 20px auto 0;
-            padding: 40px;
-            border-radius: 32px;
-            border: 1px solid rgba(45, 70, 54, 0.08);
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 18px 36px rgba(44, 62, 80, 0.06);
-            display: grid;
-            gap: 20px;
-            color: rgba(44, 62, 80, 0.88);
-        }
-        .exp-list {
-            margin: 0;
-            padding-left: 20px;
-            line-height: 1.9;
-        }
-        .exp-back { width: fit-content; }
-        main { padding-bottom: 60px; }
-
-        .exp-cards {
-            width: var(--container);
-            margin: 28px auto 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .exp-card {
-            padding: 32px 28px;
-            border-radius: 24px;
-            border: 1px solid rgba(45, 70, 54, 0.10);
-            background: rgba(255, 255, 255, 0.88);
-            box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
-            display: grid;
-            gap: 10px;
-            min-height: 240px;
-        }
-        .exp-card h2 {
-            font-family: "Fraunces", serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--moss);
-            margin: 0;
-        }
-        .exp-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: rgba(44, 62, 80, 0.80);
-        }
-        .exp-card-btn {
-            margin-top: auto;
-            width: auto;
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1.5px solid var(--moss);
-            background: transparent;
-            color: var(--moss);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            justify-self: start;
-            align-self: start;
-            white-space: nowrap;
-            line-height: 1.2;
-            font-family: inherit;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.18s, color 0.18s;
-        }
-        .exp-card-btn:hover {
-            background: var(--moss);
-            color: #fff;
-        }
-        .exp-modal-backdrop {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(18, 29, 23, 0.62);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-        .exp-modal-backdrop.is-open {
-            display: flex;
-        }
-        .exp-modal {
-            background: #fff;
-            border-radius: 28px;
-            padding: 44px 40px;
-            max-width: 560px;
-            width: 100%;
-            box-shadow: 0 32px 64px rgba(18, 29, 23, 0.22);
-            position: relative;
-            display: grid;
-            gap: 16px;
-        }
-        .exp-modal h3 {
-            font-family: "Fraunces", serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--moss);
-            margin: 0;
-        }
-        .exp-modal p {
-            margin: 0;
-            line-height: 1.75;
-            color: rgba(44, 62, 80, 0.85);
-        }
-        .exp-modal .button,
-        .exp-modal .button-compact {
-            width: auto;
-            display: inline-flex;
-            justify-self: start;
-        }
-        .exp-modal ul,
-        .exp-modal ol {
-            margin: 0;
-            padding-left: 20px;
-            display: grid;
-            gap: 6px;
-            color: rgba(44, 62, 80, 0.85);
-            line-height: 1.65;
-            font-size: 0.9rem;
-        }
-        .exp-modal-close {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: rgba(44, 62, 80, 0.5);
-            line-height: 1;
-        }
-        .exp-modal-close:hover { color: var(--moss); }
-        .exp-modal--rich {
-            max-width: 680px;
-            max-height: 88vh;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            gap: 0;
-        }
-        .exp-modal-alt {
-            display: block;
-            font-family: "Manrope", sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--ochre, #B58B4C);
-            margin-top: 4px;
-        }
-        .exp-modal-section {
-            margin-top: 22px;
-        }
-        .exp-modal-section h4 {
-            font-family: "Fraunces", serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--moss);
-            margin: 0 0 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(45, 70, 54, 0.12);
-        }
-    </style>
 </head>
 <body>
     <div class="site-shell">
@@ -247,28 +54,28 @@
             </div>
         </header>
 
-        <main>
-            <div class="exp-hero">
+        <main class="exp-main">
+            <div class="exp-hero exp-hero-peru-bolivia">
                 <p class="eyebrow">Expedición</p>
                 <h1>Perú - Bolivia</h1>
             </div>
 
             <div class="exp-cards">
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/choquequirao.jpg'); background-size: cover; background-position: center bottom; border-color: transparent; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,0.6);">
-                    <h2 style="color: #fff;">Choquequirao</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-choquequirao" data-modal-target="modal-choquequirao" style="border-color: rgba(244,247,246,0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-borderless exp-card-choquequirao">
+                    <h2>Choquequirao</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-choquequirao" data-modal-target="modal-choquequirao">Ver más info</button>
                 </div>
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/Ausangate.jpg'); background-size: cover; background-position: center bottom; border-color: transparent; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,0.6);">
-                    <h2 style="color: #fff;">Ausangate Trek</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ausangate" data-modal-target="modal-ausangate" style="border-color: rgba(244,247,246,0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-borderless exp-card-ausangate">
+                    <h2>Ausangate Trek</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ausangate" data-modal-target="modal-ausangate">Ver más info</button>
                 </div>
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/salkantay.jpg'); background-size: cover; background-position: center bottom; border-color: transparent; color: #fff; text-shadow: 0 6px 18px rgba(0,0,0,0.6);">
-                    <h2 style="color: #fff;">Salkantay - Machu Picchu</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-salkantay" data-modal-target="modal-salkantay" style="border-color: rgba(244,247,246,0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-borderless exp-card-salkantay">
+                    <h2>Salkantay - Machu Picchu</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-salkantay" data-modal-target="modal-salkantay">Ver más info</button>
                 </div>
             </div>
 
-            <div style="width: var(--container); margin: 28px auto 0;">
+            <div class="exp-back-wrap">
                 <a class="button button-secondary exp-back" href="index.html#experiencias">← Volver a expediciones</a>
             </div>
         </main>
@@ -356,7 +163,7 @@
                 </ol>
             </section>
 
-            <a class="button button-primary button-compact" href="index.html#contacto" style="width: auto; display: inline-flex;">Consultar disponibilidad</a>
+            <a class="button button-primary button-compact" href="index.html#contacto">Consultar disponibilidad</a>
         </div>
     </div>
 

@@ -4,285 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Expedicion +6000 msnm - Chasqui Aventura. Alta montaña con logística integral de expedición.">
-    <title>Expedicion +6000 msnm | Chasqui</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .exp-hero {
-            width: var(--container);
-            margin: 22px auto 0;
-            min-height: 380px;
-            padding: 52px 56px;
-            display: grid;
-            align-content: end;
-            color: #f4f7f6;
-            border-radius: 44px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background:
-                linear-gradient(180deg, rgba(18, 29, 23, 0.18), rgba(18, 29, 23, 0.72)),
-                url("imagen/+6000.jpeg");
-            background-size: cover;
-            background-position: center;
-        }
-        .exp-hero h1 {
-            margin: 8px 0 0;
-            font-family: "Fraunces", serif;
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1;
-        }
-        .exp-body {
-            width: var(--container);
-            margin: 20px auto 0;
-            padding: 40px;
-            border-radius: 32px;
-            border: 1px solid rgba(45, 70, 54, 0.08);
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 18px 36px rgba(44, 62, 80, 0.06);
-            display: grid;
-            gap: 20px;
-            color: rgba(44, 62, 80, 0.88);
-        }
-        .exp-list {
-            margin: 0;
-            padding-left: 20px;
-            line-height: 1.9;
-        }
-        .exp-back { width: fit-content; }
-        main { padding-bottom: 60px; }
-
-        .exp-cards {
-            width: var(--container);
-            margin: 28px auto 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .exp-card {
-            padding: 32px 28px;
-            border-radius: 24px;
-            border: 1px solid rgba(45, 70, 54, 0.10);
-            box-shadow: 0 12px 28px rgba(44, 62, 80, 0.07);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            min-height: 260px;
-            background: transparent;
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-            color: rgba(244,247,246,0.96);
-        }
-        .exp-card h2 {
-            font-family: "Fraunces", serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--moss);
-            margin: 0;
-        }
-        .exp-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: rgba(44, 62, 80, 0.80);
-        }
-        .exp-card-san-francisco {
-            background:
-                linear-gradient(180deg, rgba(18, 29, 23, 0.35), rgba(18, 29, 23, 0.72)),
-                url("imagen/volcansanfrancisco.jpg");
-            background-size: cover;
-            background-position: center bottom;
-            border-color: rgba(255, 255, 255, 0.32);
-        }
-        .exp-card-san-francisco h2,
-        .exp-card-san-francisco p {
-            color: rgba(244, 247, 246, 0.96);
-        }
-        .exp-card-san-francisco .exp-card-btn {
-            border-color: rgba(244, 247, 246, 0.92);
-            color: #f4f7f6;
-            background: rgba(18, 29, 23, 0.22);
-        }
-        .exp-card-san-francisco .exp-card-btn:hover {
-            background: rgba(244, 247, 246, 0.96);
-            color: #1f3126;
-        }
-        .exp-card-aconcagua,
-        .exp-card-el-plata,
-        .exp-card-ojos {
-            background-size: cover;
-            background-position: center bottom;
-            border-color: rgba(255, 255, 255, 0.32);
-        }
-        .exp-card-aconcagua h2,
-        .exp-card-el-plata h2,
-        .exp-card-ojos h2 {
-            color: rgba(244, 247, 246, 0.96);
-            margin-top: 0;
-            text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-        }
-        .exp-card-aconcagua .exp-card-btn,
-        .exp-card-el-plata .exp-card-btn,
-        .exp-card-ojos .exp-card-btn {
-            border-color: rgba(244, 247, 246, 0.92);
-            color: #f4f7f6;
-            background: rgba(18, 29, 23, 0.22);
-        }
-        .exp-card-aconcagua .exp-card-btn:hover,
-        .exp-card-el-plata .exp-card-btn:hover,
-        .exp-card-ojos .exp-card-btn:hover {
-            background: rgba(244, 247, 246, 0.96);
-            color: #1f3126;
-        }
-        .exp-card-btn {
-            margin-top: auto;
-            width: auto;
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1.5px solid var(--moss);
-            background: transparent;
-            color: var(--moss);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            justify-self: start;
-            align-self: start;
-            white-space: nowrap;
-            line-height: 1.2;
-            font-family: inherit;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.18s, color 0.18s;
-        }
-        .exp-card-btn:hover {
-            background: var(--moss);
-            color: #fff;
-        }
-        .exp-card-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: auto;
-        }
-        .exp-card-btn-secondary {
-            background: rgba(244, 247, 246, 0.16);
-            border-color: rgba(244, 247, 246, 0.92);
-            color: #f4f7f6;
-        }
-        .exp-card-btn-secondary:hover {
-            background: rgba(244, 247, 246, 0.96);
-            color: #1f3126;
-        }
-
-        /* Modal */
-        .exp-modal-backdrop {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(18, 29, 23, 0.62);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-        .exp-modal-backdrop.is-open {
-            display: flex;
-        }
-        .exp-modal {
-            background: #fff;
-            border-radius: 28px;
-            padding: 44px 40px;
-            max-width: 560px;
-            width: 100%;
-            box-shadow: 0 32px 64px rgba(18, 29, 23, 0.22);
-            position: relative;
-            display: grid;
-            gap: 16px;
-        }
-        .exp-modal h3 {
-            font-family: "Fraunces", serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--moss);
-            margin: 0;
-        }
-        .exp-modal p {
-            margin: 0;
-            line-height: 1.75;
-            color: rgba(44, 62, 80, 0.85);
-        }
-        .exp-modal ul {
-            margin: 0;
-            padding-left: 20px;
-            line-height: 1.9;
-            color: rgba(44, 62, 80, 0.85);
-        }
-        .exp-modal-close {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: rgba(44, 62, 80, 0.5);
-            line-height: 1;
-        }
-        .exp-modal-close:hover { color: var(--moss); }
-        .exp-modal--rich {
-            max-width: 680px;
-            max-height: 88vh;
-            overflow-y: auto;
-            scrollbar-width: thin;
-            gap: 0;
-        }
-        .exp-modal-alt {
-            display: block;
-            font-family: "Manrope", sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--ochre, #B58B4C);
-            margin-top: 4px;
-        }
-        .exp-modal-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 12px 0 4px;
-        }
-        .exp-badge {
-            padding: 4px 14px;
-            border-radius: 999px;
-            background: rgba(45, 70, 54, 0.10);
-            color: var(--moss);
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-        .exp-modal-section {
-            margin-top: 22px;
-        }
-        .exp-modal-section h4 {
-            font-family: "Fraunces", serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--moss);
-            margin: 0 0 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(45, 70, 54, 0.12);
-        }
-        .exp-modal-itinerary {
-            margin: 0;
-            padding-left: 22px;
-            display: grid;
-            gap: 6px;
-            color: rgba(44, 62, 80, 0.85);
-            line-height: 1.65;
-            font-size: 0.9rem;
         }
         .exp-modal--rich ul {
             margin: 0;
@@ -343,52 +65,52 @@
             </div>
         </header>
 
-        <main>
-            <div class="exp-hero">
+        <main class="exp-main">
+            <div class="exp-hero exp-hero-6000">
                 <p class="eyebrow">Expedición</p>
                 <h1>+6000 msnm</h1>
             </div>
 
             <div class="exp-cards">
-                <div class="exp-card exp-card-san-francisco">
+                <div class="exp-card exp-card--image exp-card-san-francisco">
                     <h2>Volcán San Francisco</h2>
                     <div class="exp-card-actions">
                         <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-san-francisco" data-modal-target="modal-san-francisco">Ver más info</button>
                     </div>
                 </div>
-                <div class="exp-card exp-card-el-plata" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/cerroelplata.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                <div class="exp-card exp-card--image exp-card-el-plata">
                     <h2>Cerro El Plata</h2>
                     <div class="exp-card-actions">
                         <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-el-plata" data-modal-target="modal-el-plata">Ver más info</button>
                     </div>
                 </div>
-                <div class="exp-card exp-card-ojos" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/ojosdelsalado.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                <div class="exp-card exp-card--image exp-card-ojos">
                     <h2>Volcán Ojos del Salado</h2>
                     <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-ojos" data-modal-target="modal-ojos">Ver más info</button>
                 </div>
-                <div class="exp-card exp-card-aconcagua" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/aconcagua.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
+                <div class="exp-card exp-card--image exp-card-aconcagua">
                     <h2>Aconcagua</h2>
                     <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-aconcagua" data-modal-target="modal-aconcagua">Ver más info</button>
                 </div>
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/llullaillaco.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
-                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Volcán Llullaillaco</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-llullaillaco" data-modal-target="modal-llullaillaco" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-llullaillaco">
+                    <h2>Volcán Llullaillaco</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-llullaillaco" data-modal-target="modal-llullaillaco">Ver más info</button>
                 </div>
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/lagunablanca.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
-                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Nevado Laguna Blanca</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-laguna-blanca" data-modal-target="modal-laguna-blanca" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-laguna-blanca">
+                    <h2>Nevado Laguna Blanca</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-laguna-blanca" data-modal-target="modal-laguna-blanca">Ver más info</button>
                 </div>
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/incahuasi.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
-                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Volcán Incahuasi</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-incahuasi" data-modal-target="modal-incahuasi" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-incahuasi">
+                    <h2>Volcán Incahuasi</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-incahuasi" data-modal-target="modal-incahuasi">Ver más info</button>
                 </div>
-                <div class="exp-card" style="background: linear-gradient(180deg, rgba(18,29,23,0.35), rgba(18,29,23,0.72)), url('imagen/famatina.jpg'); background-size: cover; background-position: center bottom; border-color: rgba(255,255,255,0.32);">
-                    <h2 style="color: rgba(244, 247, 246, 0.96); text-shadow: 0 6px 18px rgba(0,0,0,0.6);">Nevado de Famatina</h2>
-                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-famatina" data-modal-target="modal-famatina" style="border-color: rgba(244, 247, 246, 0.92); color: #f4f7f6; background: rgba(18, 29, 23, 0.22);">Ver más info</button>
+                <div class="exp-card exp-card--image exp-card-famatina">
+                    <h2>Nevado de Famatina</h2>
+                    <button class="exp-card-btn" type="button" aria-haspopup="dialog" aria-controls="modal-famatina" data-modal-target="modal-famatina">Ver más info</button>
                 </div>
             </div>
 
-            <div style="width: var(--container); margin: 28px auto 0;">
+            <div class="exp-back-wrap">
                 <a class="button button-secondary exp-back" href="index.html#experiencias">← Volver a expediciones</a>
             </div>
         </main>
@@ -449,7 +171,7 @@
                 <section class="exp-modal-section">
                     <h4>Sobre la expedición</h4>
                     <p>El Cerro El Plata, con sus más de 5900 metros de altura, es una de las montañas más emblemáticas de la Cordillera Frontal mendocina y el gran guardián del Cordón del Plata. Por muchos años se pensó que superaba los 6000 msnm, y aunque hoy sabemos que no es así, por su proximidad a dicha altura es considerado un seismil. Rodeado de glaciares, filos de altura y extensos paisajes andinos, representa una de las experiencias clásicas de alta montaña en Argentina.</p>
-                    <p style="margin-top: 10px;">Esta expedición propone una progresión gradual de aclimatación y campamentos de altura, transitando vegas, quebradas y terrenos glaciarios hasta alcanzar alguno de los grandes objetivos del cordón. Una experiencia intensa y desafiante, destinada a montañistas con buena preparación física y experiencia previa en montaña.</p>
+                    <p class="exp-modal-spaced">Esta expedición propone una progresión gradual de aclimatación y campamentos de altura, transitando vegas, quebradas y terrenos glaciarios hasta alcanzar alguno de los grandes objetivos del cordón. Una experiencia intensa y desafiante, destinada a montañistas con buena preparación física y experiencia previa en montaña.</p>
                 </section>
 
                 <section class="exp-modal-section">
@@ -579,7 +301,7 @@
                 <section class="exp-modal-section">
                     <h4>Sobre la expedición</h4>
                     <p>Uno de los volcanes más imponentes de la cordillera de los Andes, con una altitud de 6638 msnm, ubicado sobre la frontera entre Argentina y Chile. Su nombre, de origen quechua, significa “Casa del Inca”, reflejando la profunda conexión histórica y cultural de esta montaña con las antiguas civilizaciones andinas.</p>
-                    <p style="margin-top: 10px;">La expedición transcurre a través del espectacular Valle de los Seismiles, rodeado de volcanes gigantes, lagunas de altura y extensos paisajes desérticos de montaña. El ascenso combina exigencia física, altura extrema y una experiencia única en uno de los entornos más remotos y majestuosos de Sudamérica.</p>
+                    <p class="exp-modal-spaced">La expedición transcurre a través del espectacular Valle de los Seismiles, rodeado de volcanes gigantes, lagunas de altura y extensos paisajes desérticos de montaña. El ascenso combina exigencia física, altura extrema y una experiencia única en uno de los entornos más remotos y majestuosos de Sudamérica.</p>
                 </section>
 
                 <section class="exp-modal-section">
@@ -626,7 +348,7 @@
                 <section class="exp-modal-section">
                     <h4>Sobre la expedición</h4>
                     <p>El Cerro General Belgrano (Nevado de Famatina), conocido también como Nevado de Famatina, es la montaña más alta de la provincia de La Rioja, alcanzando los 6120 msnm. Forma parte de la imponente Sierra de Famatina y se destaca por sus paisajes áridos de altura, antiguas huellas mineras y extensos valles andinos.</p>
-                    <p style="margin-top: 10px;">La expedición combina jornadas de aclimatación, trekking de montaña y ascensos progresivos hasta alcanzar la cumbre, atravesando refugios históricos, caminos mineros y escenarios remotos de la cordillera riojana. Es una experiencia ideal para quienes buscan aventura, altura y conexión con uno de los macizos más emblemáticos del noroeste argentino.</p>
+                    <p class="exp-modal-spaced">La expedición combina jornadas de aclimatación, trekking de montaña y ascensos progresivos hasta alcanzar la cumbre, atravesando refugios históricos, caminos mineros y escenarios remotos de la cordillera riojana. Es una experiencia ideal para quienes buscan aventura, altura y conexión con uno de los macizos más emblemáticos del noroeste argentino.</p>
                 </section>
 
                 <section class="exp-modal-section">
@@ -667,7 +389,7 @@
                 <section class="exp-modal-section">
                     <h4>Sobre la expedición</h4>
                     <p>El Nevado Laguna Blanca se eleva dentro de la Reserva Provincial y comunidad ancestral de Laguna Blanca, uno de los paisajes más auténticos y singulares de la provincia de Catamarca. Esta región combina cultura andina viva, extensas lagunas de altura y escenarios naturales únicos en plena puna argentina.</p>
-                    <p style="margin-top: 10px;">Considerado el “seismil” más accesible de la cordillera argentina, el Nevado Laguna Blanca ofrece una experiencia ideal de alta montaña, rodeada de volcanes, vegas andinas y comunidades ancestrales que conservan sus tradiciones en uno de los entornos más remotos y fascinantes del noroeste argentino.</p>
+                    <p class="exp-modal-spaced">Considerado el “seismil” más accesible de la cordillera argentina, el Nevado Laguna Blanca ofrece una experiencia ideal de alta montaña, rodeada de volcanes, vegas andinas y comunidades ancestrales que conservan sus tradiciones en uno de los entornos más remotos y fascinantes del noroeste argentino.</p>
                 </section>
 
                 <section class="exp-modal-section">
@@ -708,7 +430,7 @@
                 <section class="exp-modal-section">
                     <h4>Sobre la expedición</h4>
                     <p>El Aconcagua es la montaña más alta de América y la cumbre máxima del hemisferio occidental, con 6962 msnm. Forma parte del prestigioso desafío de las “Seven Summits”, que reúne a las montañas más altas de cada continente y representa uno de los mayores objetivos del montañismo mundial. Ubicado en plena cordillera de los Andes, dentro del Parque Provincial Aconcagua, es uno de los desafíos de alta montaña más emblemáticos del mundo.</p>
-                    <p style="margin-top: 10px;">Su ascenso atraviesa valles de altura, glaciares, campamentos históricos y escenarios extremos de montaña, ofreciendo una experiencia única de aventura, resistencia y conexión con la inmensidad de los Andes.</p>
+                    <p class="exp-modal-spaced">Su ascenso atraviesa valles de altura, glaciares, campamentos históricos y escenarios extremos de montaña, ofreciendo una experiencia única de aventura, resistencia y conexión con la inmensidad de los Andes.</p>
                 </section>
 
                 <section class="exp-modal-section">
