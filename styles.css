@@ -381,39 +381,58 @@ body {
 }
 
 .hero-slide {
+    position: absolute;
+    inset: 0;
     opacity: 0;
     transition: opacity 900ms ease;
+    overflow: hidden;
 }
 
 .hero-slide.is-active {
     opacity: 1;
 }
 
+.hero-slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
 .hero-slide-1 {
+    background: none;
+}
+
+.hero-slide-1::after {
     background:
         linear-gradient(180deg, rgba(10, 18, 14, 0.22) 0%, rgba(10, 18, 14, 0.62) 100%),
-        linear-gradient(130deg, rgba(244, 247, 246, 0.1), rgba(124, 42, 35, 0.1) 40%, rgba(63, 75, 61, 0.5)),
-        url("imagen/1.avif");
-    background-size: cover;
-    background-position: center 38%;
+        linear-gradient(130deg, rgba(244, 247, 246, 0.1), rgba(124, 42, 35, 0.1) 40%, rgba(63, 75, 61, 0.5));
 }
 
 .hero-slide-2 {
+    background: none;
+}
+
+.hero-slide-2::after {
     background:
         linear-gradient(180deg, rgba(15, 24, 20, 0.24) 0%, rgba(15, 24, 20, 0.68) 100%),
-        radial-gradient(circle at 76% 18%, rgba(244, 247, 246, 0.28), transparent 18%),
-        url("imagen/2.avif");
-    background-size: cover;
-    background-position: center 48%;
+        radial-gradient(circle at 76% 18%, rgba(244, 247, 246, 0.28), transparent 18%);
 }
 
 .hero-slide-3 {
+    background: none;
+}
+
+.hero-slide-3::after {
     background:
         linear-gradient(180deg, rgba(11, 15, 22, 0.24) 0%, rgba(11, 15, 22, 0.62) 100%),
-        radial-gradient(circle at 32% 24%, rgba(124, 42, 35, 0.26), transparent 16%),
-        url("imagen/1.avif");
-    background-size: cover;
-    background-position: center 60%;
+        radial-gradient(circle at 32% 24%, rgba(124, 42, 35, 0.26), transparent 16%);
 }
 
 .hero-ridge-back {
@@ -1011,26 +1030,15 @@ main > .section:nth-of-type(even) {
 .story-media-dawn {
     background:
         linear-gradient(180deg, rgba(20, 28, 37, 0.08), rgba(20, 28, 37, 0.56)),
-        radial-gradient(circle at 28% 24%, rgba(124, 42, 35, 0.24), transparent 16%),
-        url("imagen/sobre mi.jpeg");
-    background-size: cover;
-    background-position: center 35%;
+        radial-gradient(circle at 28% 24%, rgba(124, 42, 35, 0.24), transparent 16%);
 }
 
 .story-media-faces {
-    background:
-        linear-gradient(180deg, rgba(59, 59, 59, 0.12), rgba(59, 59, 59, 0.34)),
-        url("imagen\IMG_20250107_121646_110 (1).jpg");
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(180deg, rgba(59, 59, 59, 0.12), rgba(59, 59, 59, 0.34));
 }
 
 .story-media-summit {
-    background:
-        linear-gradient(180deg, rgba(32, 40, 50, 0.12), rgba(32, 40, 50, 0.5)),
-        url("imagen/1.avif");
-    background-size: cover;
-    background-position: center 65%;
+    background: linear-gradient(180deg, rgba(32, 40, 50, 0.12), rgba(32, 40, 50, 0.5));
 }
 
 .story-copy {
@@ -1401,6 +1409,7 @@ main > .section:nth-of-type(even) {
 }
 
 .exp-hero {
+    position: relative;
     width: var(--container);
     margin: 22px auto 0;
     min-height: 380px;
@@ -1411,9 +1420,29 @@ main > .section:nth-of-type(even) {
     border-radius: 44px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    background: linear-gradient(180deg, rgba(18, 29, 23, 0.18), rgba(18, 29, 23, 0.72)), var(--exp-hero-image);
-    background-size: cover;
-    background-position: center;
+    background: none;
+}
+
+.exp-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(18, 29, 23, 0.18), rgba(18, 29, 23, 0.72));
+    z-index: 1;
+}
+
+.exp-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.exp-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 .exp-hero h1 {
@@ -1423,12 +1452,6 @@ main > .section:nth-of-type(even) {
     font-weight: 700;
     line-height: 1;
 }
-
-.exp-hero-4000 { --exp-hero-image: url("imagen/4000mts.jpg"); }
-.exp-hero-5000 { --exp-hero-image: url("imagen/Tilcara.jpeg"); }
-.exp-hero-6000 { --exp-hero-image: url("imagen/+6000.jpeg"); }
-.exp-hero-mendoza { --exp-hero-image: url("imagen/mendoza.png"); }
-.exp-hero-peru-bolivia { --exp-hero-image: url("imagen/2.avif"); }
 
 .exp-body {
     width: var(--container);
@@ -1492,17 +1515,38 @@ main > .section:nth-of-type(even) {
 }
 
 .exp-card--image {
+    position: relative;
     min-height: 260px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     overflow: hidden;
-    background: linear-gradient(180deg, rgba(18, 29, 23, 0.35), rgba(18, 29, 23, 0.72)), var(--exp-image);
-    background-size: cover;
-    background-position: center bottom;
-    border-color: var(--exp-card-border, rgba(255, 255, 255, 0.32));
-    color: var(--exp-card-color, #fff);
-    text-shadow: var(--exp-card-shadow, 0 6px 18px rgba(0, 0, 0, 0.6));
+    background: none;
+    border-color: rgba(255, 255, 255, 0.32);
+    color: #fff;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.exp-card--image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(18, 29, 23, 0.35), rgba(18, 29, 23, 0.72));
+    z-index: 1;
+}
+
+.exp-card--image > * {
+    position: relative;
+    z-index: 2;
+}
+
+.exp-card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 .exp-card--image h2,
@@ -1536,7 +1580,7 @@ main > .section:nth-of-type(even) {
 }
 
 .exp-card--image.exp-card-borderless {
-    --exp-card-border: transparent;
+    border-color: transparent;
 }
 
 .exp-card-btn {
@@ -1571,23 +1615,6 @@ main > .section:nth-of-type(even) {
     border-color: rgba(244, 247, 246, 0.92);
     color: #f4f7f6;
 }
-
-.exp-card-vallecitos { --exp-image: url("imagen/vallecitos.jpg"); }
-.exp-card-maipo { --exp-image: url("imagen/maipo.jpg"); }
-.exp-card-beltrand { --exp-image: url("imagen/beltrand.jpg"); }
-.exp-card-elsosneado { --exp-image: url("imagen/elsosneado.jpg"); }
-.exp-card-riscoplateado { --exp-image: url("imagen/riscoplateado.jpg"); }
-.exp-card-san-francisco { --exp-image: url("imagen/volcansanfrancisco.jpg"); }
-.exp-card-el-plata { --exp-image: url("imagen/cerroelplata.jpg"); }
-.exp-card-ojos { --exp-image: url("imagen/ojosdelsalado.jpg"); }
-.exp-card-aconcagua { --exp-image: url("imagen/aconcagua.jpg"); }
-.exp-card-llullaillaco { --exp-image: url("imagen/llullaillaco.jpg"); }
-.exp-card-laguna-blanca { --exp-image: url("imagen/lagunablanca.jpg"); }
-.exp-card-incahuasi { --exp-image: url("imagen/incahuasi.jpg"); }
-.exp-card-famatina { --exp-image: url("imagen/famatina.jpg"); }
-.exp-card-choquequirao { --exp-image: url("imagen/choquequirao.jpg"); }
-.exp-card-ausangate { --exp-image: url("imagen/Ausangate.jpg"); }
-.exp-card-salkantay { --exp-image: url("imagen/salkantay.jpg"); }
 
 .exp-modal-backdrop {
     display: none;
@@ -1671,6 +1698,21 @@ main > .section:nth-of-type(even) {
     overflow-y: auto;
     scrollbar-width: thin;
     gap: 0;
+}
+
+.exp-modal--rich ul {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 6px;
+    color: rgba(44, 62, 80, 0.85);
+    line-height: 1.65;
+    font-size: 0.9rem;
+}
+
+.exp-modal--rich .button {
+    margin-top: 24px;
+    width: fit-content;
 }
 
 .exp-modal-alt {
