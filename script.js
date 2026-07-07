@@ -258,3 +258,53 @@ if (contactForm) {
         }
     });
 }
+
+// Modal handling
+const openModal = (modalId) => {
+    const modal = document.getElementById(modalId);
+    if (modal instanceof HTMLElement) {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+const closeModal = (modal) => {
+    if (modal instanceof HTMLElement) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+};
+
+// Event delegation for modal buttons
+document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-modal-target]');
+    if (button) {
+        const modalId = button.dataset.modalTarget;
+        if (modalId) {
+            openModal(modalId);
+        }
+    }
+
+    const closeBtn = event.target.closest('.exp-modal-close');
+    if (closeBtn) {
+        const backdrop = event.target.closest('.exp-modal-backdrop');
+        if (backdrop) {
+            closeModal(backdrop);
+        }
+    }
+
+    const backdrop = event.target.closest('.exp-modal-backdrop');
+    if (backdrop && event.target === backdrop) {
+        closeModal(backdrop);
+    }
+});
+
+// Escape key to close modals
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const openModals = document.querySelectorAll('.exp-modal-backdrop.is-open');
+        openModals.forEach((modal) => {
+            closeModal(modal);
+        });
+    }
+});
