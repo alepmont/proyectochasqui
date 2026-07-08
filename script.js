@@ -168,6 +168,18 @@ if (topbar && menuToggle && topnav) {
     });
 }
 
+const updateTopbarScrollState = () => {
+    if (!topbar) {
+        return;
+    }
+
+    topbar.classList.toggle('is-scrolled', window.scrollY > 50);
+};
+
+window.addEventListener('scroll', updateTopbarScrollState, { passive: true });
+window.addEventListener('resize', updateTopbarScrollState);
+updateTopbarScrollState();
+
 if (heroSlides.length > 1) {
     let activeSlide = 0;
 
@@ -246,6 +258,42 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 
 revealElements.forEach((element) => revealObserver.observe(element));
+
+const instagramSection = document.querySelector('.section-instagram');
+const instagramScriptPlaceholder = document.querySelector('script[data-instagram-src]');
+const loadInstagramEmbed = () => {
+    if (!instagramScriptPlaceholder || document.querySelector('script[data-instagram-loaded]')) {
+        return;
+    }
+
+    const script = document.createElement('script');
+    script.src = instagramScriptPlaceholder.dataset.instagramSrc;
+    script.async = true;
+    script.dataset.instagramLoaded = 'true';
+    document.body.appendChild(script);
+};
+
+if (instagramSection) {
+    if ('IntersectionObserver' in window) {
+        const instagramObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                loadInstagramEmbed();
+                observer.unobserve(entry.target);
+            });
+        }, {
+            rootMargin: '0px 0px -150px 0px',
+            threshold: 0.1
+        });
+
+        instagramObserver.observe(instagramSection);
+    } else {
+        loadInstagramEmbed();
+    }
+}
 
 if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
