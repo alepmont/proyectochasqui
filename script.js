@@ -8,6 +8,9 @@ const dropdownWrappers = Array.from(document.querySelectorAll('.topnav-dropdown'
 const experienceGrid = document.querySelector('.experience-grid');
 const experiencePrev = document.querySelector('.carousel-arrow-prev');
 const experienceNext = document.querySelector('.carousel-arrow-next');
+const instagramRow = document.querySelector('.instagram-row-shell');
+const instagramPrev = document.querySelector('.instagram-carousel-arrow-prev');
+const instagramNext = document.querySelector('.instagram-carousel-arrow-next');
 const langButtons = Array.from(document.querySelectorAll('.lang-button'));
 
 const setLangButtonState = (lang) => {
@@ -135,6 +138,14 @@ dropdownWrappers.forEach((wrapper) => {
 });
 
 if (topbar && menuToggle && topnav) {
+    const brand = topbar.querySelector('.brand');
+
+    if (brand && !topnav.querySelector('.topnav-mobile-brand')) {
+        const mobileBrand = brand.cloneNode(true);
+        mobileBrand.classList.add('topnav-mobile-brand');
+        topnav.append(mobileBrand);
+    }
+
     const closeMenu = () => {
         topbar.classList.remove('menu-open');
         menuToggle.setAttribute('aria-expanded', 'false');
@@ -241,6 +252,45 @@ if (experienceGrid && experiencePrev && experienceNext) {
     experienceGrid.addEventListener('focusout', startAutoScroll);
 
     startAutoScroll();
+}
+
+if (instagramRow && instagramPrev && instagramNext) {
+    const getInstagramStep = () => {
+        const firstPost = instagramRow.querySelector('.instagram-post-slot');
+
+        if (!(firstPost instanceof HTMLElement)) {
+            return instagramRow.clientWidth;
+        }
+
+        const styles = window.getComputedStyle(instagramRow);
+        const gap = Number.parseFloat(styles.columnGap || styles.gap || '0');
+        return firstPost.offsetWidth + gap;
+    };
+
+    const syncInstagramArrows = () => {
+        if (window.innerWidth > 480) {
+            instagramPrev.classList.add('is-hidden');
+            instagramNext.classList.add('is-hidden');
+            return;
+        }
+
+        const maxScroll = instagramRow.scrollWidth - instagramRow.clientWidth;
+        instagramPrev.classList.toggle('is-hidden', instagramRow.scrollLeft <= 4);
+        instagramNext.classList.toggle('is-hidden', instagramRow.scrollLeft >= maxScroll - 4);
+    };
+
+    instagramPrev.addEventListener('click', () => {
+        instagramRow.scrollBy({ left: -getInstagramStep(), behavior: 'smooth' });
+    });
+
+    instagramNext.addEventListener('click', () => {
+        instagramRow.scrollBy({ left: getInstagramStep(), behavior: 'smooth' });
+    });
+
+    instagramRow.addEventListener('scroll', syncInstagramArrows, { passive: true });
+    window.addEventListener('resize', syncInstagramArrows);
+    window.setTimeout(syncInstagramArrows, 180);
+    syncInstagramArrows();
 }
 
 const revealObserver = new IntersectionObserver((entries) => {

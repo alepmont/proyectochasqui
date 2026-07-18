@@ -202,6 +202,10 @@ img {
     transform: scaleX(1);
 }
 
+.topnav-mobile-brand {
+    display: none;
+}
+
 /* â”€â”€ Dropdown de expediciones â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .topnav-dropdown {
     position: relative;
@@ -809,6 +813,42 @@ main > .section:nth-of-type(even) {
 
 .section-instagram {
     padding-top: 72px;
+}
+
+.instagram-carousel {
+    position: relative;
+}
+
+.instagram-carousel-arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(124, 42, 35, 0.28);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--adventure);
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(59, 59, 59, 0.16);
+}
+
+.instagram-carousel-arrow-prev {
+    left: 8px;
+}
+
+.instagram-carousel-arrow-next {
+    right: 8px;
+}
+
+.instagram-carousel-arrow.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .instagram-row-shell {
@@ -1980,6 +2020,7 @@ main > .section:nth-of-type(even) {
         display: -webkit-box;
         overflow: hidden;
         text-overflow: ellipsis;
+        line-clamp: 2;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         font-size: 0.72rem;
@@ -2011,6 +2052,52 @@ main > .section:nth-of-type(even) {
 
     .topbar.menu-open .topnav {
         display: flex;
+    }
+
+    .topnav-mobile-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: auto;
+        padding: 14px 2px 2px;
+        border-top: 1px solid rgba(63, 75, 61, 0.14);
+    }
+
+    .topnav .topnav-mobile-brand {
+        width: 100%;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .topnav .topnav-mobile-brand::after {
+        display: none;
+    }
+
+    .topnav .topnav-mobile-brand:hover,
+    .topnav .topnav-mobile-brand:focus-visible {
+        background: transparent;
+    }
+
+    .topnav-mobile-brand .brand-mark {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 auto;
+    }
+
+    .topnav-mobile-brand .brand-copy {
+        min-width: 0;
+    }
+
+    .topnav-mobile-brand .brand-name {
+        font-size: 0.88rem;
+        letter-spacing: 0.05em;
+    }
+
+    .topnav-mobile-brand .brand-copy small {
+        max-height: none;
+        line-clamp: unset;
+        -webkit-line-clamp: unset;
+        display: block;
     }
 
     .topnav-dropdown {
@@ -2260,16 +2347,32 @@ main > .section:nth-of-type(even) {
         grid-auto-columns: 90%;
     }
 
+    .instagram-carousel {
+        padding-inline: 30px;
+    }
+
+    .instagram-carousel-arrow {
+        display: inline-flex;
+    }
+
     .instagram-row-shell {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .instagram-row-shell::-webkit-scrollbar {
+        display: none;
     }
 
     .instagram-post-slot {
-        flex: none;
-        min-width: auto;
+        flex: 0 0 100%;
+        min-width: 100%;
         width: 100%;
+        scroll-snap-align: start;
     }
 
     .visual-mini-grid {
