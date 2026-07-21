@@ -291,6 +291,10 @@ img {
     outline: none;
 }
 
+.topnav-docs-dropdown .topnav-dropdown-menu {
+    min-width: 220px;
+}
+
 .lang-switch {
     display: inline-flex;
     align-items: center;
