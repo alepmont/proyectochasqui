@@ -2130,11 +2130,20 @@ main > .section:nth-of-type(even) {
         box-shadow: none;
         border-color: rgba(63, 75, 61, 0.1);
         background: rgba(255, 255, 255, 0.96);
-        max-height: 260px;
-        overflow: hidden;
+        max-height: none;
+        overflow: visible;
+        padding: 8px;
+        display: none;
+    }
+
+    .topnav-dropdown-menu a {
+        white-space: normal;
+        line-height: 1.35;
     }
 
     .topnav-dropdown.is-open .topnav-dropdown-menu {
+        display: grid;
+        gap: 6px;
         animation: none;
     }
 
