@@ -2125,6 +2125,7 @@ main > .section:nth-of-type(even) {
         position: static;
         transform: none;
         min-width: unset;
+        width: 100%;
         border-radius: 16px;
         margin-top: 8px;
         box-shadow: none;
@@ -2134,11 +2135,17 @@ main > .section:nth-of-type(even) {
         overflow: visible;
         padding: 8px;
         display: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     .topnav-dropdown-menu a {
         white-space: normal;
         line-height: 1.35;
+        display: block;
+        width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .topnav-dropdown.is-open .topnav-dropdown-menu {
