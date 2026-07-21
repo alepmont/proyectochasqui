@@ -505,7 +505,7 @@ body {
 .panel-card h2,
 .cta-shell h2 {
     margin: 0;
-    font-family: "Fraunces", serif;
+    font-family: "Herculanum", "Copperplate Gothic", "Copperplate", "Palatino Linotype", serif;
     font-weight: 700;
     line-height: 0.98;
 }
@@ -513,7 +513,7 @@ body {
 .hero h1 {
     max-width: 10ch;
     color: #fff;
-    font-size: clamp(3.4rem, 7vw, 6.2rem);
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
 }
 
 .hero-title {
