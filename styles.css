@@ -663,7 +663,7 @@ body {
 }
 
 .section {
-    padding: 92px 28px 28px;
+    padding: 28px 28px 28px;
     margin-top: 20px;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(63, 75, 61, 0.08);
@@ -2383,7 +2383,7 @@ main > .section:nth-of-type(even) {
     }
 
     .section {
-        padding: 58px 14px 20px;
+        padding: 28px 14px 20px;
     }
 
     .footer {
