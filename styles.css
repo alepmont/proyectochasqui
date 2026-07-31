@@ -2345,7 +2345,7 @@ main > .section:nth-of-type(even) {
     }
 
     .hero h1 {
-        font-size: clamp(2.4rem, 14vw, 3.6rem);
+        font-size: clamp(2.4rem, 14vw, 2.6rem);
     }
 
     .hero-copy {
