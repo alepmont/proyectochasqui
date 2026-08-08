@@ -146,6 +146,19 @@ if (topbar && menuToggle && topnav) {
         topnav.append(mobileBrand);
     }
 
+    if (!topnav.querySelector('.topnav-close')) {
+        const closeButton = document.createElement('button');
+        closeButton.type = 'button';
+        closeButton.className = 'topnav-close';
+        closeButton.setAttribute('aria-label', 'Cerrar menu');
+        closeButton.innerHTML = [
+            '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">',
+            '<path d="M6 6l12 12M18 6L6 18"/>',
+            '</svg>'
+        ].join('');
+        topnav.prepend(closeButton);
+    }
+
     const closeMenu = () => {
         topbar.classList.remove('menu-open');
         menuToggle.setAttribute('aria-expanded', 'false');
@@ -157,6 +170,11 @@ if (topbar && menuToggle && topnav) {
         menuToggle.setAttribute('aria-expanded', String(isOpen));
         menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menu' : 'Abrir menu');
     });
+
+    const closeButton = topnav.querySelector('.topnav-close');
+    if (closeButton instanceof HTMLButtonElement) {
+        closeButton.addEventListener('click', closeMenu);
+    }
 
     topnav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
