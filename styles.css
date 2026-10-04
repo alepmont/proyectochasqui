@@ -1,4 +1,16 @@
-﻿:root {
+@font-face {
+    font-family: "Chasqui Herculanum";
+    src: url("fonts/herculanum-web-v2.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+button, input, select, textarea {
+    font-family: "Chasqui Herculanum", serif;
+}
+
+:root {
     --moss: #3F4B3D;
     --adventure: #7C2A23;
     --ochre: #7C2A23;
@@ -31,7 +43,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Manrope", sans-serif;
+    font-family: "Chasqui Herculanum", serif;
     color: var(--charcoal);
     background: var(--page-bg-current);
     padding-top: var(--topbar-offset);
@@ -158,12 +170,12 @@ img {
 }
 
 .brand-copy strong {
-    font-family: "Herculanum", "Copperplate Gothic", "Copperplate", "Palatino Linotype", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1rem;
 }
 
 .brand-name {
-    font-family: inherit;
+    font-family: "Chasqui Herculanum", serif;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-size: 0.92rem;
@@ -513,7 +525,7 @@ body {
 .panel-card h2,
 .cta-shell h2 {
     margin: 0;
-    font-family: "Herculanum", "Copperplate Gothic", "Copperplate", "Palatino Linotype", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-weight: 700;
     line-height: 0.98;
 }
@@ -525,7 +537,7 @@ body {
 }
 
 .hero-title {
-    font-family: "Herculanum", "Copperplate Gothic", "Copperplate", "Palatino Linotype", serif;
+    font-family: "Chasqui Herculanum", serif;
 }
 
 .hero-copy {
@@ -1230,7 +1242,7 @@ main > .section:nth-of-type(even) {
 
 .footer-logo {
     display: block;
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1.6rem;
     color: var(--charcoal);
 }
@@ -1286,7 +1298,7 @@ main > .section:nth-of-type(even) {
 
 .stat-item strong {
     display: block;
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: clamp(1.7rem, 2.8vw, 2.6rem);
     font-weight: 700;
     color: var(--moss);
@@ -1296,7 +1308,7 @@ main > .section:nth-of-type(even) {
 .stat-item strong small {
     font-size: 0.52em;
     vertical-align: super;
-    font-family: "Manrope", sans-serif;
+    font-family: "Chasqui Herculanum", serif;
     font-weight: 800;
 }
 
@@ -1394,7 +1406,7 @@ main > .section:nth-of-type(even) {
 }
 
 .package-card h3 {
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1.45rem;
     font-weight: 700;
     margin: 0 0 22px;
@@ -1510,7 +1522,7 @@ main > .section:nth-of-type(even) {
 
 .exp-hero h1 {
     margin: 8px 0 0;
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: clamp(2.4rem, 5vw, 4rem);
     font-weight: 700;
     line-height: 1;
@@ -1563,7 +1575,7 @@ main > .section:nth-of-type(even) {
 }
 
 .exp-card h2 {
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--moss);
@@ -1675,7 +1687,7 @@ main > .section:nth-of-type(even) {
     align-self: start;
     white-space: nowrap;
     line-height: 1.2;
-    font-family: inherit;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 0.8rem;
     font-weight: 700;
     cursor: pointer;
@@ -1722,7 +1734,7 @@ main > .section:nth-of-type(even) {
 }
 
 .exp-modal h3 {
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--moss);
@@ -1794,7 +1806,7 @@ main > .section:nth-of-type(even) {
 
 .exp-modal-alt {
     display: block;
-    font-family: "Manrope", sans-serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1rem;
     font-weight: 600;
     color: var(--ochre, #B58B4C);
@@ -1825,7 +1837,7 @@ main > .section:nth-of-type(even) {
 }
 
 .exp-modal-section h4 {
-    font-family: "Fraunces", serif;
+    font-family: "Chasqui Herculanum", serif;
     font-size: 1rem;
     font-weight: 700;
     color: var(--moss);
