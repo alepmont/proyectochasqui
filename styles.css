@@ -941,6 +941,7 @@ main > .section:nth-of-type(even) {
 
 .expedition-thumb {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     border-radius: 16px;
