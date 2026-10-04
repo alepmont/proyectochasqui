@@ -65,38 +65,35 @@ const loadGoogleTranslate = () => {
 };
 
 if (langButtons.length) {
-    const browserLang = navigator.language.toLowerCase().startsWith('en') ? 'en' : 'es';
-    const initialLang = localStorage.getItem('site-lang') || browserLang;
+    let requestedLang = localStorage.getItem('site-lang') === 'en' ? 'en' : 'es';
+    let translationTimer;
 
-    setLangButtonState(initialLang);
-    setGoogleLangCookie(initialLang);
-    loadGoogleTranslate();
+    const translateWhenNeeded = (lang) => {
+        requestedLang = lang;
+        window.clearTimeout(translationTimer);
+        setLangButtonState(lang);
+        setGoogleLangCookie(lang);
 
-    const syncInitialLanguage = () => {
-        if (!applyGoogleTranslate(initialLang)) {
-            window.setTimeout(syncInitialLanguage, 350);
+        if (lang === 'es' && !document.querySelector('script[data-google-translate="true"]')) {
+            return;
         }
+
+        loadGoogleTranslate();
+        let attempts = 0;
+        const retry = () => {
+            if (!applyGoogleTranslate(requestedLang) && attempts++ < 40) {
+                translationTimer = window.setTimeout(retry, 350);
+            }
+        };
+        retry();
     };
 
-    window.setTimeout(syncInitialLanguage, 450);
-
+    translateWhenNeeded(requestedLang);
     langButtons.forEach((button) => {
         button.addEventListener('click', () => {
             const targetLang = button.dataset.lang === 'en' ? 'en' : 'es';
-
             localStorage.setItem('site-lang', targetLang);
-            setLangButtonState(targetLang);
-            setGoogleLangCookie(targetLang);
-
-            if (!applyGoogleTranslate(targetLang)) {
-                const retry = () => {
-                    if (!applyGoogleTranslate(targetLang)) {
-                        window.setTimeout(retry, 250);
-                    }
-                };
-
-                retry();
-            }
+            translateWhenNeeded(targetLang);
         });
     });
 }
@@ -342,6 +339,15 @@ const loadInstagramEmbed = () => {
 };
 
 if (instagramSection) {
+    // Prepare posts in the background without waiting for every page image.
+    const scheduleInstagram = () => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadInstagramEmbed, { timeout: 1500 });
+        } else {
+            window.setTimeout(loadInstagramEmbed, 500);
+        }
+    };
+    window.setTimeout(scheduleInstagram, 1500);
     if ('IntersectionObserver' in window) {
         const instagramObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
@@ -424,3 +430,29 @@ document.addEventListener('keydown', (event) => {
         });
     }
 });
+
+const presentationVideo = document.querySelector('video[data-video-src]');
+if (presentationVideo) {
+    const prepareVideo = () => {
+        if (!presentationVideo.getAttribute('src')) {
+            presentationVideo.src = presentationVideo.dataset.videoSrc;
+            presentationVideo.load();
+        }
+    };
+    if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    prepareVideo();
+                    presentationVideo.play().catch(() => {});
+                } else {
+                    presentationVideo.pause();
+                }
+            });
+        }, { rootMargin: '300px 0px', threshold: 0 });
+        videoObserver.observe(presentationVideo);
+    } else {
+        prepareVideo();
+        presentationVideo.play().catch(() => {});
+    }
+}
