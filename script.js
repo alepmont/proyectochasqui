@@ -98,38 +98,91 @@ if (langButtons.length) {
     });
 }
 
+const setSubmenuState = (wrapper, isOpen) => {
+    const trigger = wrapper.querySelector('.topnav-submenu-trigger');
+    if (!(trigger instanceof HTMLButtonElement)) return;
+    wrapper.classList.toggle('is-open', isOpen);
+    trigger.setAttribute('aria-expanded', String(isOpen));
+};
+
+const closeSubmenus = (wrapper) => {
+    wrapper.querySelectorAll('.topnav-submenu').forEach((submenu) => {
+        setSubmenuState(submenu, false);
+    });
+};
+
 dropdownWrappers.forEach((wrapper) => {
     const trigger = wrapper.querySelector('.topnav-dropdown-trigger');
     const menu = wrapper.querySelector('.topnav-dropdown-menu');
 
-    if (!(trigger instanceof HTMLButtonElement) || !menu) {
-        return;
-    }
+    if (!(trigger instanceof HTMLButtonElement) || !menu) return;
 
-    const openDropdown = () => {
-        wrapper.classList.add('is-open');
-        trigger.setAttribute('aria-expanded', 'true');
-    };
-
-    const closeDropdown = () => {
-        wrapper.classList.remove('is-open');
-        trigger.setAttribute('aria-expanded', 'false');
+    const setDropdownState = (isOpen) => {
+        wrapper.classList.toggle('is-open', isOpen);
+        trigger.setAttribute('aria-expanded', String(isOpen));
+        if (!isOpen) closeSubmenus(wrapper);
     };
 
     trigger.addEventListener('click', () => {
-        wrapper.classList.contains('is-open') ? closeDropdown() : openDropdown();
+        const desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        setDropdownState(desktopPointer || !wrapper.classList.contains('is-open'));
+    });
+
+    wrapper.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            setDropdownState(true);
+        }
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !wrapper.contains(document.activeElement)) {
+            setDropdownState(false);
+        }
     });
 
     wrapper.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
-            closeDropdown();
+            setDropdownState(false);
             trigger.focus();
         }
     });
 
     document.addEventListener('click', (event) => {
-        if (!wrapper.contains(event.target)) {
-            closeDropdown();
+        if (!wrapper.contains(event.target)) setDropdownState(false);
+    });
+});
+
+document.querySelectorAll('.topnav-submenu').forEach((wrapper) => {
+    const trigger = wrapper.querySelector('.topnav-submenu-trigger');
+    if (!(trigger instanceof HTMLButtonElement)) return;
+
+    trigger.addEventListener('click', () => {
+        const desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        const willOpen = desktopPointer || !wrapper.classList.contains('is-open');
+        const siblings = wrapper.parentElement?.querySelectorAll(':scope > .topnav-submenu') || [];
+        siblings.forEach((sibling) => {
+            if (sibling !== wrapper) setSubmenuState(sibling, false);
+        });
+        setSubmenuState(wrapper, willOpen);
+    });
+
+    wrapper.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            setSubmenuState(wrapper, true);
+        }
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !wrapper.contains(document.activeElement)) {
+            setSubmenuState(wrapper, false);
+        }
+    });
+
+    wrapper.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            setSubmenuState(wrapper, false);
+            trigger.focus();
+            event.stopPropagation();
         }
     });
 });
@@ -380,56 +433,6 @@ if (contactForm) {
         }
     });
 }
-
-// Modal handling
-const openModal = (modalId) => {
-    const modal = document.getElementById(modalId);
-    if (modal instanceof HTMLElement) {
-        modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-    }
-};
-
-const closeModal = (modal) => {
-    if (modal instanceof HTMLElement) {
-        modal.classList.remove('is-open');
-        document.body.style.overflow = '';
-    }
-};
-
-// Event delegation for modal buttons
-document.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-modal-target]');
-    if (button) {
-        const modalId = button.dataset.modalTarget;
-        if (modalId) {
-            openModal(modalId);
-        }
-    }
-
-    const closeBtn = event.target.closest('.exp-modal-close');
-    if (closeBtn) {
-        const backdrop = event.target.closest('.exp-modal-backdrop');
-        if (backdrop) {
-            closeModal(backdrop);
-        }
-    }
-
-    const backdrop = event.target.closest('.exp-modal-backdrop');
-    if (backdrop && event.target === backdrop) {
-        closeModal(backdrop);
-    }
-});
-
-// Escape key to close modals
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        const openModals = document.querySelectorAll('.exp-modal-backdrop.is-open');
-        openModals.forEach((modal) => {
-            closeModal(modal);
-        });
-    }
-});
 
 const presentationVideo = document.querySelector('video[data-video-src]');
 if (presentationVideo) {
