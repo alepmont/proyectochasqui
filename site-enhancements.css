@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 body, button, input, select, textarea,
 main .button, main .exp-modal-alt {
@@ -7,10 +7,10 @@ main .button, main .exp-modal-alt {
 
 main h1, main h2, main h3, main h4,
 main .hero-title, main .exp-hero h1, main .cta-shell h2, main .stat-item strong {
-    font-family: "Fraunces", serif;
+    font-family: "Manrope", sans-serif;
 }
 
-.topbar, .topbar button, .brand-copy strong, .brand-name, .footer-logo {
+.brand-copy strong, .brand-name, .footer-logo {
     font-family: "Chasqui Herculanum", serif;
 }
 
