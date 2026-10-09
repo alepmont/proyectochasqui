@@ -363,3 +363,8 @@ main .hero-title, main .exp-hero h1, main .cta-shell h2, main .stat-item strong 
 @media (max-width: 600px) {
     .expedition-detail-heading h1 { font-size: 2rem; }
 }
+
+/* Champaquí: preserve the full framing of the supplied photographs. */
+.champaqui-gallery { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 28px; }
+.champaqui-gallery .expedition-detail-main-image { max-height: none; height: auto; }
+@media (min-width: 700px) { .champaqui-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
