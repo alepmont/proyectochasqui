@@ -1,2 +1,15 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect explicit homepage requests, keeping internal index resolution intact.
+    RewriteCond %{HTTP_HOST} ^(?:www\.)?chasquiaventura\.com\.ar$ [NC]
+    RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+    RewriteRule ^index\.html$ https://chasquiaventura.com.ar/ [R=301,L]
+
+    # Preserve the requested path and query string when removing www.
+    RewriteCond %{HTTP_HOST} ^www\.chasquiaventura\.com\.ar$ [NC]
+    RewriteRule ^ https://chasquiaventura.com.ar%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+
 Redirect 301 /expediciones/4000-huella-choicana.html https://chasquiaventura.com.ar/expediciones/3000-huella-choicana.html
 Redirect 301 /expediciones/4000-tafi-del-valle-siambon.html https://chasquiaventura.com.ar/expediciones/3000-tafi-del-valle-el-siambon.html
