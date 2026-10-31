@@ -392,15 +392,7 @@ const loadInstagramEmbed = () => {
 };
 
 if (instagramSection) {
-    // Prepare posts in the background without waiting for every page image.
-    const scheduleInstagram = () => {
-        if ('requestIdleCallback' in window) {
-            window.requestIdleCallback(loadInstagramEmbed, { timeout: 1500 });
-        } else {
-            window.setTimeout(loadInstagramEmbed, 500);
-        }
-    };
-    window.setTimeout(scheduleInstagram, 1500);
+    // Prepare posts well before the section is visible, without a startup timer.
     if ('IntersectionObserver' in window) {
         const instagramObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
@@ -412,13 +404,21 @@ if (instagramSection) {
                 observer.unobserve(entry.target);
             });
         }, {
-            rootMargin: '800px 0px',
+            rootMargin: '1200px 0px',
             threshold: 0
         });
 
         instagramObserver.observe(instagramSection);
     } else {
-        loadInstagramEmbed();
+        const loadInstagramOnApproach = () => {
+            if (instagramSection.getBoundingClientRect().top > window.innerHeight + 1200) return;
+            loadInstagramEmbed();
+            window.removeEventListener('scroll', loadInstagramOnApproach);
+            window.removeEventListener('resize', loadInstagramOnApproach);
+        };
+        window.addEventListener('scroll', loadInstagramOnApproach, { passive: true });
+        window.addEventListener('resize', loadInstagramOnApproach);
+        loadInstagramOnApproach();
     }
 }
 
