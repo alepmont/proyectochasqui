@@ -27,10 +27,17 @@
 .expedition-lightbox { padding: 0; border: 0; width: fit-content; max-width: 94vw; max-height: 94vh; max-height: 94dvh; background: #18241e; color: white; border-radius: 14px; }
 .expedition-lightbox::backdrop { background: rgba(8, 14, 10, .88); }
 .expedition-lightbox-panel { padding: 12px; }
+.expedition-lightbox-stage { position: relative; min-width: 120px; min-height: 100px; }
+.expedition-lightbox-arrow { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid rgba(255, 255, 255, .7); border-radius: 50%; background: rgba(12, 24, 17, .8); color: white; font-size: 20px; cursor: pointer; }
+.expedition-lightbox-arrow[hidden] { display: none; }
+.expedition-lightbox-arrow:hover { background: #3f4b3d; }
+.expedition-lightbox-prev { left: 8px; }
+.expedition-lightbox-next { right: 8px; }
+.expedition-lightbox-count { margin-top: 12px; text-align: center; color: white; font-size: .9rem; font-variant-numeric: tabular-nums; }
 .expedition-lightbox-close { display: block; min-height: 44px; margin: 0 0 8px auto; padding: 8px 14px; border: 1px solid #87988c; border-radius: 24px; background: #263b2e; color: white; font: inherit; cursor: pointer; }
 .expedition-lightbox img { display: block; width: auto; height: auto; max-width: 88vw; max-height: 72vh; max-height: 72dvh; object-fit: contain; margin: auto; }
 .expedition-lightbox p { margin: 12px 0 0; max-width: 80ch; font-size: .9rem; line-height: 1.5; color: white; }
-.expedition-lightbox-close:focus-visible { outline: 3px solid white; outline-offset: 2px; }
+.expedition-lightbox-close:focus-visible, .expedition-lightbox-arrow:focus-visible { outline: 3px solid white; outline-offset: 2px; }
 @media (max-width: 1000px) {
  .expedition-photo-masonry { columns: 2; }
  .expedition-photo-masonry-san-rafael { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); grid-auto-flow: row; }
