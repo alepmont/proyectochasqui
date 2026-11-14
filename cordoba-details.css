@@ -1,0 +1,100 @@
+.cordoba-detail {
+    --cordoba-line: #d9dfd5;
+    --cordoba-tint: #eef2e9;
+}
+
+.cordoba-detail .expedition-detail-heading {
+    border-inline-start: 4px solid var(--adventure, #7c2a23);
+    padding-inline-start: clamp(16px, 3vw, 28px);
+}
+
+.cordoba-detail .expedition-detail-heading h2 {
+    color: var(--moss, #3f4b3d);
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    line-height: 1.35;
+}
+
+.cordoba-detail .expedition-detail-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(33, 48, 37, 0.12);
+}
+
+.cordoba-detail .expedition-detail-intro {
+    margin-top: 32px;
+    color: var(--moss, #3f4b3d);
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    line-height: 1.55;
+}
+
+.cordoba-detail .expedition-detail-content p {
+    line-height: 1.7;
+}
+
+.cordoba-detail .exp-modal-section {
+    margin-block: 24px;
+    padding: clamp(16px, 4vw, 32px);
+    border: 1px solid var(--cordoba-line);
+    border-top: 4px solid var(--moss, #3f4b3d);
+    border-radius: 14px;
+    background: #fff;
+    scroll-margin-top: 7rem;
+}
+
+.cordoba-detail .exp-modal-section h2 {
+    margin: 0 0 .8em;
+    color: var(--moss, #3f4b3d);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    line-height: 1.25;
+}
+
+.cordoba-detail .exp-modal-section h3 {
+    margin: 1.3em 0 .5em;
+    padding-top: .8em;
+    border-top: 1px solid var(--cordoba-line);
+    font-size: 1.08rem;
+    line-height: 1.4;
+}
+
+.cordoba-detail .exp-modal-itinerary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+    gap: 8px 24px;
+    padding: 16px 16px 16px 36px;
+    border-radius: 10px;
+    background: var(--cordoba-tint);
+    line-height: 1.55;
+}
+
+.cordoba-detail .exp-modal-itinerary li::marker {
+    color: var(--adventure, #7c2a23);
+}
+
+.cordoba-program-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0;
+}
+
+.cordoba-program-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 16px;
+    border: 1px solid var(--cordoba-line);
+    border-radius: 999px;
+    background: var(--cordoba-tint);
+    color: var(--moss, #3f4b3d);
+    font-weight: 700;
+}
+
+.cordoba-program-links a:hover {
+    border-color: var(--moss, #3f4b3d);
+    text-decoration: underline;
+}
+
+.cordoba-program-links a:focus-visible {
+    outline: 2px solid var(--adventure, #7c2a23);
+    outline-offset: 3px;
+}
