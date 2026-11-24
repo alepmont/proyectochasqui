@@ -20,6 +20,14 @@
     box-shadow: 0 12px 30px rgba(33, 48, 37, 0.12);
 }
 
+.cordoba-detail .expedition-cover-complete {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+}
+
 .cordoba-detail .expedition-detail-intro {
     margin-top: 32px;
     color: var(--moss, #3f4b3d);
