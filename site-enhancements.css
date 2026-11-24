@@ -289,7 +289,7 @@ main .hero-title, main .exp-hero h1, main .cta-shell h2, main .stat-item strong 
 .expedition-detail-content .exp-modal-section h3 {
     margin: 0 0 12px;
     padding-bottom: 8px;
-    border-bottom: 1px solid rgba(45, 70, 54, 0.16);
+    border-bottom: 1px solid var(--adventure, #7c2a23);
     color: var(--moss);
     font-size: 1.2rem;
 }

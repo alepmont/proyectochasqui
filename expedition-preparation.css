@@ -1,0 +1,77 @@
+.expedition-preparation {
+    margin: 36px 0;
+}
+
+.expedition-preparation > h2 {
+    margin: 0 0 18px;
+    color: var(--moss, #3f4b3d);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    line-height: 1.3;
+}
+
+.expedition-preparation-panel {
+    margin: 12px 0;
+    overflow: hidden;
+    border: 1px solid #d9dfd5;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.expedition-preparation-panel summary {
+    padding: 18px 22px;
+    background: #eef2e9;
+    color: var(--moss, #3f4b3d);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.expedition-preparation-panel summary::marker {
+    color: var(--adventure, #7c2a23);
+}
+
+.expedition-preparation-panel summary:focus-visible {
+    outline: 3px solid var(--adventure, #7c2a23);
+    outline-offset: -4px;
+}
+
+.expedition-preparation-panel[open] summary {
+    border-bottom: 1px solid var(--adventure, #7c2a23);
+}
+
+.expedition-preparation-body {
+    padding: 8px clamp(16px, 4vw, 28px) 16px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.expedition-preparation-body ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+    padding-left: 20px;
+}
+
+.expedition-preparation-body ol {
+    padding-left: 24px;
+}
+
+.expedition-preparation-body li {
+    padding: 9px 0 9px 4px;
+    border-bottom: 1px solid #edf0e9;
+}
+
+.expedition-preparation-body li::marker {
+    color: var(--adventure, #7c2a23);
+}
+
+@media (max-width: 600px) {
+    .expedition-preparation-body ul {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .expedition-preparation-panel summary {
+        padding: 16px;
+    }
+}
